@@ -13,7 +13,7 @@
  *   GOOGLE_REFRESH_TOKEN — refresh token OAuth có scope drive (từ gcloud ADC)
  *   GOOGLE_CLIENT_ID     — client_id đi kèm refresh token
  *   GOOGLE_CLIENT_SECRET — client_secret đi kèm refresh token
- *   GOOGLE_DRIVE_FOLDER_ID — ID thư mục Drive "GIONG-VN-Backup"
+ *   GOOGLE_DRIVE_FOLDER_ID — ID thư mục Drive "EC-HOLDINGS-Backup"
  *
  * Thiếu env → trả { ok:false, reason:"not-configured" } — nút backup báo rõ,
  * app không bị ảnh hưởng. Không phụ thuộc package googleapis — thuần fetch
@@ -119,7 +119,7 @@ export async function collectBackupData(): Promise<BackupData> {
     }
   }
   const now = new Date();
-  return { meta: { app: "GIONG VIETNAM", exportedAt: now.toISOString(), counts }, data };
+  return { meta: { app: "EC-HOLDINGS", exportedAt: now.toISOString(), counts }, data };
 }
 
 export function backupStamp(now = new Date()): string {
@@ -131,7 +131,7 @@ export function backupStamp(now = new Date()): string {
 async function buildExcel(data: BackupData): Promise<Buffer> {
   const ExcelJS = (await import("exceljs")).default;
   const wb = new ExcelJS.Workbook();
-  wb.creator = "GIONG VIETNAM";
+  wb.creator = "EC-HOLDINGS";
   wb.created = new Date();
   // Sheet tổng quan đầu tiên
   const summary = wb.addWorksheet("Tổng quan");

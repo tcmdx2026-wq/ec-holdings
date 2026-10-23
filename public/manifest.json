@@ -1,7 +1,7 @@
 {
-  "name": "GIONG VIỆT NAM",
-  "short_name": "GIONG VN",
-  "description": "Hệ thống điều hành chuỗi trung tâm tiêm chủng Gióng Việt Nam",
+  "name": "EC-HOLDINGS",
+  "short_name": "EC-HOLDINGS",
+  "description": "Hệ thống điều hành Công ty EC-HOLDINGS",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

@@ -12,7 +12,7 @@ const databaseUrl =
 
 /**
  * GĐ 162 (PA-A): SQL Server GiongDB tại máy công ty qua Cloudflare Tunnel.
- * `TUNNEL_API_BASE_URL` = URL tunnel hiện hành (service GIONG_API_Server tự
+ * `TUNNEL_API_BASE_URL` = URL tunnel hiện hành (service EC_API_Server tự
  * đăng ký) + `API_TOKEN` xác thực. Ưu tiên CAO NHẤT — app tổng tách hẳn khỏi
  * Neon (không đốt egress, không chết khi Neon khóa quota — sự cố 14/10 18/09).
  */
@@ -27,7 +27,7 @@ const apiToken =
  * GĐ 169 (PA-1 — tự cập nhật URL Quick Tunnel, duyệt 19/09):
  * Quick Tunnel đổi URL mỗi lần tunnel restart — env TUNNEL_API_BASE_URL là
  * build-time, mỗi lần đổi phải sửa env + redeploy (điểm nghẽn vận hành).
- * Kênh mới: API Server (service GIONG_API_Server) tự PATCH **GitHub Secret
+ * Kênh mới: API Server (service EC_API_Server) tự PATCH **GitHub Secret
  * Gist** mỗi lần URL đổi (kênh NGOÀI tunnel — sống độc lập); app khi query
  * tunnel thất bại (tunnel chết/đổi URL) → đọc gist → lấy URL mới → cache
  * dùng tiếp. Không cần redeploy nữa.

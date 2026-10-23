@@ -366,7 +366,7 @@ function TrungTamPage() {
       <div ref={stickyTitleRef} className="sticky top-16 z-10 -mx-4 border-b border-line bg-bg px-4 pb-2 sm:-mx-6 sm:px-6">
         <div className="flex items-center justify-between gap-2">
           <h2 className="text-base font-semibold text-ink">
-            Danh sách các trung tâm tiêm chủng ({centers.length})
+            Danh sách các đơn vị ({centers.length})
           </h2>
           <div className="flex rounded-lg border border-line bg-surface p-0.5">
             <button

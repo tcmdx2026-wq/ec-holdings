@@ -762,7 +762,7 @@ function ChamCongPage() {
         <PageHeader
         eyebrow="Vận hành"
         title="Chấm công toàn hệ thống"
-        desc="Điểm danh vào ca và tan ca ở văn phòng và toàn bộ các trung tâm tiêm chủng."
+        desc="Điểm danh vào ca và tan ca ở văn phòng và các đơn vị."
         actions={
           <>
             <Button

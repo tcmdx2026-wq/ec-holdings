@@ -1,7 +1,6 @@
 /**
- * Tọa độ 19 trung tâm + Văn phòng — nguồn: public/ToadoGiong.txt
- * (BẢNG TỌA ĐỘ 19 TRUNG TÂM - CÔNG TY CP GIONG VIỆT NAM, STT 0→19)
- * Key = mã trung tâm (centers.code). Cụm = cột "Cụm" trong file gốc.
+ * Tọa độ đơn vị — nguồn: public/ToadoGiong.txt
+ * Key = mã đơn vị (centers.code). Cụm = cột "Cụm" trong file gốc.
  */
 export type CenterCoord = {
   lat: number;

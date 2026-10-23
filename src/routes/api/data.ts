@@ -1091,7 +1091,7 @@ export const reverseGeocode = createServerFn({ method: "GET" })
         {
           headers: {
             "Accept-Language": "vi",
-            "User-Agent": "GIONG-VN/1.0 (cham-cong-app)",
+            "User-Agent": "EC-HOLDINGS/1.0 (cham-cong-app)",
           },
         },
       );

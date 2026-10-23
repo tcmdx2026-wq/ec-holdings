@@ -1,5 +1,5 @@
 # 🚀 HƯỚNG DẪN DEPLOY TỪNG BƯỚC
-## GIONG VIỆT NAM - Quản lý chuỗi trung tâm tiêm chủng
+## EC-HOLDINGS - Hệ thống điều hành công ty
 
 ---
 

@@ -12,9 +12,9 @@ export const isAdminRole = _isAdminRole;
 export const isApprovedEmployeeEmail = _isApprovedEmployeeEmail;
 
 export const APP_NAME = "EC-HOLDINGS";
-export const APP_TAGLINE = "Hệ thống điều hành Gióng Việt Nam";
-export const COMPANY = "Công ty Gióng Việt Nam";
-export const SUPPORT_PHONE = "0904 07 57 57";
+export const APP_TAGLINE = "Hệ thống điều hành EC-HOLDINGS";
+export const COMPANY = "Công ty EC-HOLDINGS";
+export const SUPPORT_PHONE = "0975 109 612";
 export const SUPPORT_ALT = "0948 80 96 96";
 
 export const ORGANIZATION = {
@@ -194,7 +194,7 @@ export const GUIDES = [
   {
     id: "GT001",
     title: "Giới thiệu phần mềm",
-    body: "EC-HOLDINGS là hệ thống điều hành chuỗi trung tâm tiêm chủng Gióng Việt Nam — dùng được trên máy tính, trình duyệt, iPhone và Android. Ứng dụng thay thế bộ AppSheet rời, gom chấm công, nhiệm vụ và đề nghị về một dashboard.",
+    body: "EC-HOLDINGS là hệ thống điều hành Công ty EC-HOLDINGS — dùng được trên máy tính, trình duyệt, iPhone và Android. Ứng dụng gom chấm công, nhiệm vụ và đề nghị về một dashboard.",
   },
   {
     id: "GT003",
@@ -229,7 +229,7 @@ export const GUIDES = [
   {
     id: "GT009",
     title: "Việc làm mỗi ngày",
-    body: "1. Chấm công. 2. Kiểm tra kế hoạch cũ, lập kế hoạch mới. 3. Vào module nghiệp vụ theo chức danh. 4. Góp ý và ghi chú. Hỗ trợ Zalo/điện thoại 0948 80 96 96 hoặc 0904 07 57 57.",
+    body: "1. Chấm công. 2. Kiểm tra kế hoạch cũ, lập kế hoạch mới. 3. Vào module nghiệp vụ theo chức danh. 4. Góp ý và ghi chú. Hỗ trợ Zalo/điện thoại 0975 109 612 hoặc 0948 80 96 96.",
   },
 ];
 
@@ -246,6 +246,6 @@ export const DOCS = [
   { id: "hs1", name: "Quy chế chấm công & lương", dept: "HCNS", updated: "2026-07-12" },
   { id: "hs3", name: "Hồ sơ vay vốn VietinBank", dept: "Tài chính", updated: "2026-02-11" },
 
-  { id: "hs5", name: "Nội quy trung tâm tiêm chủng", dept: "Ban giám đốc", updated: "2026-04-18" },
+  { id: "hs5", name: "Nội quy Công ty EC-HOLDINGS", dept: "Ban giám đốc", updated: "2026-04-18" },
   { id: "hs6", name: "Hướng dẫn thu ngân tại điểm", dept: "Kế toán", updated: "2026-03-10" },
 ];

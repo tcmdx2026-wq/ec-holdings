@@ -43,7 +43,7 @@ import { Toaster } from "sonner";
 type NavItem = { to: string; label: string; icon: typeof LayoutDashboard; group?: string };
 
 const VERSION_STORAGE_KEY = "giong-vina-version";
-const DEFAULT_VERSION = "1.0.0";
+const DEFAULT_VERSION = "1.1.0";
 
 /** Get app version from Vite env (injected from package.json version during build).
  * Falls back to localStorage-saved version if VITE_APP_VERSION is not set (old builds).
@@ -515,7 +515,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                     {greetingVi()}, {currentUserEmployee?.name.split(" ").slice(-1)[0] ?? ""}
                   </h1>
                   <p className="hidden truncate text-xs leading-tight text-muted sm:block">
-                    Điều hành chuỗi {centers.filter((c) => c.kind === "Trung tâm").length} trung tâm tiêm chủng Gióng Việt Nam.
+                    Điều hành Công ty EC-HOLDINGS.
                   </p>
                 </div>
                 <p className="hidden shrink-0 text-xs text-faint tabular sm:block" suppressHydrationWarning>

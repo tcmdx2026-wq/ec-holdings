@@ -21,11 +21,11 @@ export const Route = createRootRoute({
       { name: "theme-color", content: "#12211c" },
       {
         name: "description",
-        content: "Hệ thống điều hành chuỗi trung tâm tiêm chủng Gióng Việt Nam",
+        content: "Hệ thống điều hành Công ty EC-HOLDINGS",
       },
     ],
     links: [
-      // GĐ 153: favicon + PWA icon = logo Gióng (tách hình tròn từ logo gốc).
+      // GĐ 153: favicon + PWA icon = logo EC-HOLDINGS (tách hình tròn từ logo gốc).
       // GĐ 155: icon TRÒN full-khung + cache-bust ?v=3 — ép trình duyệt bỏ bản cache cũ.
       { rel: "icon", type: "image/png", href: "/icons/icon-192.png?v=3" },
       { rel: "stylesheet", href: appCss },

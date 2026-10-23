@@ -115,7 +115,7 @@ function BackupRestoreGuideCard() {
         <div className="min-w-0 flex-1">
           <h2 className="font-semibold text-ink">Hướng dẫn đọc file backup & khôi phục dữ liệu</h2>
           <p className="mt-1 text-sm leading-relaxed text-muted">
-            Mỗi lần backup tạo 1 CẶP file trong thư mục <b>GIONG-VN-Backup</b> trên Drive:
+            Mỗi lần backup tạo 1 CẶP file trong thư mục <b>EC-HOLDINGS-Backup</b> trên Drive:
           </p>
           <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-muted">
             <li>
@@ -133,7 +133,7 @@ function BackupRestoreGuideCard() {
           </ul>
           <p className="mt-3 text-sm font-semibold text-ink">Quy trình khôi phục khi sự cố (Neon mất dữ liệu):</p>
           <ol className="mt-1 list-decimal space-y-1 pl-5 text-sm leading-relaxed text-muted">
-            <li>Tải file .json KHÓI PHỤC mới nhất từ folder GIONG-VN-Backup về máy.</li>
+            <li>Tải file .json KHÓI PHỤC mới nhất từ folder EC-HOLDINGS-Backup về máy.</li>
             <li>
               Gửi file cho trợ lý lập trình — sẽ khôi phục bằng cách nạp từng bảng về Neon
               (chỉ nạp bảng bị mất, ghi đè theo `id`; dữ liệu hiện tại MỚI hơn file backup

@@ -1,4 +1,4 @@
-# GIONG VIETNAM — Project Context
+# EC-HOLDINGS — Project Context
 
 > **File này là "bộ nhớ" của project.** Mỗi session mới, AI đọc file này để hiểu bối cảnh, trạng thái, và tiếp tục công việc đúng chỗ.
 
@@ -6,9 +6,9 @@
 
 ## 1. Tổng quan dự án
 
-- **Tên:** GIONG VIETNAM (GIONG VN)
-- **Loại:** Hệ thống điều hành chuỗi trung tâm tiêm chủng — web app cho quản lý nội bộ
-- **Quản trị:** Đại ca Cường (Phạm Kiên Cường) — `cuongpk.giong04@gmail.com`, SĐT: 0904 07 57 57
+- **Tên:** EC-HOLDINGS
+- **Loại:** Điều hành Công ty EC-HOLDINGS
+- **Quản trị:** Đại ca Cường (Phạm Kiên Cường) — `tcmdx2026@gmail.com`, SĐT: 0975 109 612
 - **Trợ lý:** "Trợ lý lập trình" (AI) — giao tiếp bằng Tiếng Việt, xưng "em", gọi Đại ca là **"Đại Ca"** (hiệu lực 2026-10-20, GĐ 484 — thay cách gọi cũ "em/anh")
 - **Ngôn ngữ suy nghĩ & trả lời:** Sử dụng tiếng Việt Nam để suy nghĩ và trả lời khi tương tác với Đại Ca. KHÔNG dùng tiếng Anh trong phần suy nghĩ hay phản hồi.
 
@@ -142,16 +142,16 @@
 - **KHÔNG** có khu vực code nào "cấm động" — em có quyền sửa bất kỳ file nào
 - Khi cần test: ưu tiên test tự động (unit) viết trong `*.test.ts` hoặc `*.test.mjs`
 
-### Nguyên tắc Push (bắt buộc tuân thủ — hiệu lực 2026-09-07, cập nhật 2026-09-14 áp dụng cho CẢ HAI repo):
+### Nguyên tắc Push (bắt buộc tuân thủ — hiệu lực 2026-09-07, cập nhật 2026-09-14):
 
 > ⛔⛔⛔ **PHẦN DƯỚI ĐÃ HẾT HIỆU LỰC TỪ 2026-09-26 — THAY BẰNG "NGUYÊN TẮC PUSH ĐA AGENT" (mục kế tiếp). GIỮ LẠI ĐỂ ĐỐI CHIẾU LỊCH SỬ — AI ĐỪNG LÀM THEO PHẦN NÀY.** ⛔⛔⛔
 >
-> **SAU KHI SỬA CODE XONG (app tổng và/hoặc app con), EM PHẢI HỎI ĐẠI CA 1 TRONG 3 LỰA CHỌN TRƯỚC KHI COMMIT/PUSH:**
+> **SAU KHI SỬA CODE XONG, EM PHẢI HỎI ĐẠI CA 1 TRONG 3 LỰA CHỌN TRƯỚC KHI COMMIT/PUSH:**
 >
-> 1️⃣ **Commit cả hai repo + Ghi lịch sử công việc + Tăng Version**
-> → Commit tại máy + cập nhật AGENTS.md (cả repo nào có thay đổi) + tăng version — **CHƯA push**, để anh kiểm tra trước.
+> 1️⃣ **Commit + Ghi lịch sử công việc + Tăng Version**
+> → Commit tại máy + cập nhật AGENTS.md + tăng version — **CHƯA push**, để anh kiểm tra trước.
 >
-> 2️⃣ **Push lên GitHub từng dự án**
+> 2️⃣ **Push lên GitHub**
 > → Chỉ commit + push, KHÔNG cập nhật AGENTS.md hay tăng version.
 >
 > 3️⃣ **Cả hai điều trên**
@@ -159,33 +159,31 @@
 >
 > **Em KHÔNG tự ý commit/push mà KHÔNG hỏi.**
 > **Em KHÔNG tự ý tăng version mà KHÔNG được Đại ca đồng ý.**
-> **MỘT lần hỏi áp dụng cho CẢ HAI repo** (app tổng `giong-vn-v6` + app con `giong-apps`) — trừ khi Đại ca dặn riêng repo nào xử lý khác.
-> **Nơi tăng version:** app tổng = `package.json` + `DEFAULT_VERSION` (app-shell.tsx); app con = `apps/<tên>/package.json`.
+> **Nơi tăng version:** `package.json` + `DEFAULT_VERSION` (app-shell.tsx).
 
-- **GitHub repo:** `https://github.com/cuongpkgiong04-beep/giong-vn-v6`
+- **GitHub repo:** `https://github.com/tcmdx2026-wq/ec-holdings`
 - **Commit message** phải rõ ràng, mô tả chính xác thay đổi (feat/fix/refactor + mô tả).
 - **Nếu push fail** (credential, network) → thông báo Đại ca ngay để xử lý.
 - **Vercel auto-deploy** sau mỗi push — Đại ca chỉ cần kiểm tra trên URL.
 
-### 🤖 Nguyên tắc Push ĐA AGENT (bắt buộc tuân thủ — hiệu lực 2026-09-26, THAY LUẬT CŨ — áp dụng cho CẢ HAI repo):
+### 🤖 Nguyên tắc Push ĐA AGENT (bắt buộc tuân thủ — hiệu lực 2026-09-26, THAY LUẬT CŨ):
 
 > **BỐI CẢNH (Đại ca ban hành 2026-09-26):** Anh làm việc trên **NHIỀU session với NHIỀU AI Agent khác nhau** cùng xử lý 1 dự án. Đội AI Agent PHẢI tuân theo 3 nguyên tắc sau:
 >
 > 1️⃣ **KHÔNG tự động Push lên GitHub** — Sửa code xong chỉ **COMMIT + ghi lịch sử AGENTS.md** để mọi việc được lưu lại. Push là quyền của Đại ca — chỉ thực hiện khi anh NÓI "Push".
 >
-> 2️⃣ **Khi Đại ca nói "Push"** → XEM LẠI LỊCH SỬ VERSION để tạo **SỐ VERSION MỚI cho CẢ app tổng lẫn app con** (version bump chỉ làm lúc này — KHÔNG bump lúc commit).
+> 2️⃣ **Khi Đại ca nói "Push"** → XEM LẠI LỊCH SỬ VERSION để tạo **SỐ VERSION MỚI** (version bump chỉ làm lúc này — KHÔNG bump lúc commit).
 >
 > 3️⃣ **Trước khi Push phải KIỂM TRA** công việc của các AI Agent có **TRÙNG LẶP / SỬA ĐÈ** của nhau không → **CẢNH BÁO Đại ca ngay nếu có** (liệt kê file/Giai đoạn trùng) trước khi thực hiện push.
 >
 > **Quy trình chuẩn mỗi nhiệm vụ từ 2026-09-26:** sửa code → verify (typecheck/test) → commit → ghi AGENTS.md → BÁO xong và DỪNG (không push, không bump version).
 >
-> **MỘT lần kiểm tra áp dụng cho CẢ HAI repo** (app tổng `giong-vn-v6` + app con `giong-apps`) — trừ khi Đại ca dặn riêng repo nào xử lý khác.
-> **Nơi tăng version (CHỈ lúc Đại ca nói "Push"):** app tổng = `package.json` + `DEFAULT_VERSION` (app-shell.tsx); app con = `apps/<tên>/package.json`.
+> **Nơi tăng version (CHỈ lúc Đại ca nói "Push"):** `package.json` + `DEFAULT_VERSION` (app-shell.tsx).
 >
 > **Cách rà trùng lặp trước push (nguyên tắc 3):**
-> - `git status` + `git log --oneline -10` CẢ HAI repo — commit của Agent khác có đụng cùng file mình định push không.
+> - `git status` + `git log --oneline -10` — commit của Agent khác có đụng cùng file mình định push không.
 > - `git diff HEAD` — working tree có file modified của session KHÁC (không phải của mình) → KHÔNG add, KHÔNG đụng, báo Đại ca.
-> - Đối chiếu GĐ mới nhất trong AGENTS.md cả 2 repo — Agent khác vừa ghi GĐ trùng phạm vi → CẢNH BÁO.
+> - Đối chiếu GĐ mới nhất trong AGENTS.md — Agent khác vừa ghi GĐ trùng phạm vi → CẢNH BÁO.
 
 ### 🧪 KIỂM TRA TRƯỚC & SAU MỌI LẦN PUSH (BẮT BUỘC — MỌI AGENT — hiệu lực GĐ 470, 2026-10-19):
 
@@ -224,56 +222,41 @@
 > thật khi quay lại tunnel (agent/báo cáo đọc GiongDB không thấy), và tài khoản tạo
 > sau 16/09 KHÔNG đăng nhập được (Neon không có).
 
-> **A. TRƯỚC KHI PUSH — verify env Vercel của CẢ 2 APP:**
+> **A. TRƯỚC KHI PUSH — verify env Vercel:**
 > ```bash
-> cd "/d/DuLieuChung/CUONG_2026/giong-vn-v6"
-> npx vercel env ls --scope=giong-vn --project=giong-vn-v6 \
->   | grep -E "DATABASE_URL|APP_JWT_SECRET|TUNNEL_API_BASE_URL|BETTER_AUTH"
-> cd giong-apps/apps/banhang
-> npx vercel env ls --scope=giong-vn --project=giong-banhang \
->   | grep -E "DATABASE_URL|APP_JWT_SECRET|TUNNEL_API_BASE_URL|ZAI_API_KEY"
+> cd "/d/DuLieuChung/CUONG_2026/ec-holdings"
+> npx vercel env ls --scope=tcmdx2026 --project=ec-holdings \
+>   | grep -E "DATABASE_URL|APP_JWT_SECRET|TUNNEL_API_BASE_URL|BETTER_AUTH|ZAI_API_KEY"
 > ```
 > **Phải có — thiếu/lệch bất kỳ mục nào → DỪNG, BÁO ĐẠI CA, KHÔNG PUSH:**
-> - `DATABASE_URL` (Neon — **bảo hiểm CẤU HÌNH** chống rơi PGLite, KHÔNG phải fallback tự động khi tunnel chết — xem khối "Kiến trúc nguồn dữ liệu" ở trên) — **CẢ 2 app**
-> - `APP_JWT_SECRET` (khoá ký SSO handoff) — **CẢ 2 app, PHẢI CÙNG MỘT GIÁ TRỊ**
-> - `TUNNEL_API_BASE_URL` + `TUNNEL_GIST_ID` — CẢ 2 app (backend chính)
-> - `BETTER_AUTH_SECRET` + `BETTER_AUTH_URL` — app tổng · `ZAI_API_KEY` — app con
+> - `DATABASE_URL` (Neon — **bảo hiểm CẤU HÌNH** chống rơi PGLite, KHÔNG phải fallback tự động khi tunnel chết — xem khối "Kiến trúc nguồn dữ liệu" ở trên)
+> - `APP_JWT_SECRET` (khoá ký SSO handoff)
+> - `TUNNEL_API_BASE_URL` + `TUNNEL_GIST_ID` (backend chính)
+> - `BETTER_AUTH_SECRET` + `BETTER_AUTH_URL` · `ZAI_API_KEY`
 
 > **B. SAU KHI DEPLOY (push xong ~1-2 phút) — test login THẬT, KHÔNG tin chữ "Ready":**
 > ```bash
-> # 1) Đăng nhập app tổng → PHẢI trả JSON có "user"
-> curl -s -X POST "https://giong-vn-v6.vercel.app/api/auth/sign-in/email" \
+> # 1) Đăng nhập app → PHẢI trả JSON có "user"
+> curl -s -X POST "https://ec-holdings-three.vercel.app/api/auth/sign-in/email" \
 >   -H "Content-Type: application/json" \
->   -d '{"email":"cuongpk.giong04@gmail.com","password":"Admin123!"}' -c cookies.txt
+>   -d '{"email":"tcmdx2026@gmail.com","password":"Admin123!"}' -c cookies.txt
 > # 2) Session đọc được → có "user"
-> curl -s -b cookies.txt "https://giong-vn-v6.vercel.app/api/auth/get-session"
-> # 3) SSO sang app con: ký JWT (iss=giong-vn-v6, aud=giong-banhang) bằng APP_JWT_SECRET rồi:
-> curl -s -I "https://giong-banhang.vercel.app/api/auth/sso?sso=<TOKEN>"
-> #    ✅ ĐÚNG : 302 → https://giong-banhang.vercel.app/ + Set-Cookie: bh_session=...
-> #    ❌ SAI  : 302 → https://giong-vn-v6.vercel.app/login?next=bahang = TOKEN VERIFY FAIL
-> #              → ký TOKEN MỚI thử lại TRƯỚC (token 60s có thể đã hết hạn — đừng vội
-> #                kết luận secret lệch); vẫn fail → APP_JWT_SECRET lệch/sai giữa 2 app.
-> # 4) App con nhận phiên → "user":{...} + 14 nhóm + các lá quyền
-> curl -s -H "Cookie: bh_session=<token>" "https://giong-banhang.vercel.app/api/auth/me"
+> curl -s -b cookies.txt "https://ec-holdings-three.vercel.app/api/auth/get-session"
 > ```
-> Cách nhanh nhất (đúng luồng thật): mở `https://giong-vn-v6.vercel.app` → đăng nhập →
-> bấm **"Bán hàng"** ở sidebar → app con PHẢI vào được (không hiện "Chưa đăng nhập").
+> Cách nhanh nhất (đúng luồng thật): mở `https://ec-holdings-three.vercel.app` → đăng nhập → kiểm tra dashboard.
 
 > **C. PHÁT HIỆN LỖI → SỬA NGAY, KHÔNG CHỜ ĐẠI CA NHẮC:**
 > ```bash
-> # Đổi/đồng bộ env (làm app tổng trước, rồi app con) — rm cần trả lời yes:
-> echo "y" | npx vercel env rm <TÊN_BIẾN> production --scope=giong-vn --project=<project>
-> npx vercel env add <TÊN_BIẾN> production --scope=giong-vn --project=<project> <<< "<giá trị>"
+> # Đổi/đồng bộ env — rm cần trả lời yes:
+> echo "y" | npx vercel env rm <TÊN_BIẾN> production --scope=tcmdx2026 --project=ec-holdings
+> npx vercel env add <TÊN_BIẾN> production --scope=tcmdx2026 --project=ec-holdings <<< "<giá trị>"
 > # REDEPLOY để lấy env mới — KHÔNG cần push code:
-> npx vercel ls <project> --scope=giong-vn     # lấy URL deployment mới nhất
-> npx vercel redeploy <deployment-url> --scope=giong-vn
+> npx vercel ls ec-holdings --scope=tcmdx2026     # lấy URL deployment mới nhất
+> npx vercel redeploy <deployment-url> --scope=tcmdx2026
 > ```
-> **Lỗi CLI đã gặp thật (đừng mất thời gian lại):** `vercel env ls/add/rm` NHẬN
-> `--project`; nhưng `vercel ls` và `vercel redeploy` **KHÔNG** nhận `--project` —
-> redeploy phải truyền **URL hoặc deployment-id**, không truyền tên project.
+> **Lưu ý CLI:** `vercel env ls/add/rm` NHẬN `--project`; nhưng `vercel ls` và `vercel redeploy` **KHÔNG** nhận `--project` — redeploy phải truyền **URL hoặc deployment-id**, không truyền tên project.
 >
-> **BÁO CÁO:** sau khi push + verify, ghi kết quả (login app tổng ✅/❌ · SSO app con
-> ✅/❌ · đã sửa gì) vào entry GĐ trong AGENTS.md để phiên sau biết trạng thái.
+> **BÁO CÁO:** sau khi push + verify, ghi kết quả (login ✅/❌ · đã sửa gì) vào entry GĐ trong AGENTS.md để phiên sau biết trạng thái.
 
 
 ### 🖥️⌨️ Worktree ĐA AGENT — Agent Desktop + Agent CLI làm việc SONG SONG không chờ nhau (hiệu lực 2026-09-27):
@@ -281,19 +264,22 @@
 > **BỐI CẢNH:** Trước đây 2 Agent dùng chung 1 working tree → Agent A đang sửa file (modified) thì Agent B phải CHỜ commit xong mới đụng được file đó (vụ GĐ 230/232 — Agent chờ nhau mất nửa ngày). Nguyên nhân: 1 bàn làm việc chung. **Giải pháp (Đại ca chốt PA-1 + nhánh riêng + worktree cạnh repo):** mỗi Agent 1 working tree riêng qua `git worktree` — dùng chung `.git` (commit thấy nhau NGAY trên máy, không cần qua GitHub), làm việc ĐỘC LẬP hoàn toàn.
 >
 > **Phân vai (chốt 2026-09-27):**
-> | Agent | App tổng | App con | Nhánh |
-> |---|---|---|---|
-> | **Agent Desktop** (Windows) | `giong-vn-v6` | `giong-vn-v6/giong-apps` | `main` |
-> | **Agent CLI** (Terminal) | `giong-vn-v6-cli` | `giong-vn-v6/giong-apps-cli` | `agent-cli` |
-> | *(Agent 3+ thêm vào đây + cập nhật AGENT_REGISTRY.md)* | | | |
+> | Agent | Workspace | Nhánh |
+> |---|---|---|
+> | **Agent Desktop** (Windows) | `ec-holdings` | `main` |
+> | **Agent CLI** (Terminal) | `ec-holdings-cli` | `agent-cli` |
+> | *(Agent 3+ thêm vào đây + cập nhật AGENT_REGISTRY.md)* | | |
+>
+> **Cả 2 clone CÙNG remote `github.com/tcmdx2026-wq/ec-holdings`.** GitHub là điểm gặp nhau duy nhất.
+> Thư mục `-cli` được gitignore tại app (dòng `ec-holdings-cli/`) — clone không lọt git của nhau.
 >
 > **Quy tắc làm việc song song:**
 > 1. **Agent nào nhận việc → làm đúng working tree của mình** (đọc `git worktree list` biết ngay mình ở đâu + nhánh nào). KHÔNG đụng working tree của Agent kia.
 > 2. **Commit độc lập** — không cần chờ nhau; commit thấy ngay qua `git log` dù khác worktree (dùng chung .git).
 > 3. **2 Agent cùng sửa 1 file** vẫn có thể merge conflict khi gộp → phân vùng phạm vi (mỗi Agent nhận nhóm module khác nhau) và CẢNH BÁO khi nhận thấy phạm vi giao nhau.
-> 4. **Khi Đại ca nói "Push":** Agent nhận lệnh MERGE nhánh `agent-cli` về `main` (cả 2 repo) + rà trùng lặp (nguyên tắc 3) + bump version + push 1 lần. Conflict khi merge → dừng, báo Đại ca.
+> 4. **Khi Đại ca nói "Push":** Agent nhận lệnh MERGE nhánh `agent-cli` về `main` + rà trùng lặp (nguyên tắc 3) + bump version + push 1 lần. Conflict khi merge → dừng, báo Đại ca.
 > 5. **Untracked files (screenshots/, scripts test tạm, attachments/, .env)** KHÔNG tự động có trong worktree mới (git chỉ clone tracked files) — Agent CLI tự tạo tạm của mình, KHÔNG quay về worktree kia lấy.
-> 6. **Worktree mới thiếu node_modules** → `npm install` 1 lần trước khi chạy dev/build (worktree app tổng + worktree repo con đều vậy).
+> 6. **Worktree mới thiếu node_modules** → `npm install` 1 lần trước khi chạy dev/build.
 
 ### 🎫 CẤP SỐ GIAI ĐOẠN ĐA AGENT — REGISTRY LOCK (bắt buộc — hiệu lực GĐ 285, 2026-10-01):
 
@@ -302,13 +288,12 @@
 > khác vào grep → cùng chọn 1 số. Kèm 1 lần cướp commit (GĐ 257), author email
 > sai (GĐ 264), add nhầm file agent khác (GĐ 274).
 >
-> **Nguồn sự thật duy nhất: file `AGENT_REGISTRY.md` (app tổng — Đại ca chốt
-> 1 file duy nhất, quản lý CẢ dải GĐ app tổng LẪN dải C.x repo con).**
+> **Nguồn sự thật duy nhất: file `AGENT_REGISTRY.md` (project — Đại ca chốt
+> 1 file duy nhất, quản lý dải GĐ).**
 >
 > **Quy trình claim (TRƯỚC KHI LÀM — thay hoàn toàn cách "grep số lớn nhất +1"):**
 > 1. `git log --all --oneline -15` + đọc bảng trong AGENT_REGISTRY.md → số mới =
 >    max + 1 (worktree dùng chung `.git` → commit local thấy ngay, không cần push).
->    GĐ và C.x là 2 dải độc lập, không đếm chung.
 > 2. Thêm 1 dòng vào bảng registry: số + tên Agent + nhiệm vụ + **PHẠM VI FILE dự
 >    kiến** + trạng thái 🔒 → **COMMIT NGAY** (commit chỉ chứa registry — 0 đụng
 >    code, KHÔNG vi phạm quy tắc KHÔNG tự push GĐ 229).
@@ -321,9 +306,9 @@
 > 1. **CẤM `git add .` / `git add -A`** — chỉ add TƯỜNG MINH từng file của mình;
 >    `git status --short` trước khi add, file lạ = của agent khác → KHÔNG đụng.
 > 2. **Commit message chuẩn:** `feat|fix|docs(<scope>): GĐ <số> (<tên Agent>) — mô tả`
->    (repo con: `C.x (<tên Agent>)`) — truy vết ai làm gì bằng `git log`.
-> 3. **Checklist khởi động phiên:** pull CẢ 2 repo → `git config user.email` phải
->    `cuongpk.giong04@gmail.com` (chặn GĐ 264) → đọc AGENTS.md + registry mới nhất
+>    — truy vết ai làm gì bằng `git log`.
+> 3. **Checklist khởi động phiên:** pull repo → `git config user.email` phải
+>    `tcmdx2026@gmail.com` (chặn GĐ 264) → đọc AGENTS.md + registry mới nhất
 >    → claim số TRƯỚC khi viết code đầu tiên.
 >
 > **Chi tiết đầy đủ + bảng khóa số trực tiếp:** xem `AGENT_REGISTRY.md`.
@@ -374,7 +359,7 @@
 
 > ⚠️ **THỜI ĐIỂM bump (2026-09-26):** chỉ bump khi **Đại ca nói "Push"** (nguyên tắc ĐA AGENT bên trên) — KHÔNG bump ngay khi commit. Quy tắc tính số bên dưới vẫn nguyên hiệu lực.
 
-- **2 nơi cần sửa (luôn bump CẢ HAI cùng lúc):**
+- **2 nơi cần sửa:**
   1. `package.json` → field `"version": "x.y.z"`
   2. `src/components/app-shell.tsx` → `const DEFAULT_VERSION = "x.y.z"`
 - **Quy tắc tăng:** Patch (x.y.Z+1) cho fix nhỏ, Minor (x.Y.0+1) cho feature mới.
@@ -391,15 +376,15 @@
   - `0.9.9` → `1.0.0` (NHẢY QUA 0.10.0)
   - `1.9.9` → `2.0.0`
 - **KHÔNG bao giờ tồn tại** dạng `x.10.y` hay `x.y.10` — số như `1.19.9` KHÔNG HỢP LỆ trong hệ này (minor có 2 chữ số), không được dùng làm ví dụ tăng.
-- **✅ CHECKLIST BẮT BUỘC khi bump (3 bước — làm trước khi ghi số vào file/commit, áp dụng CẢ app tổng lẫn repo con — hiệu lực 2026-09-16 sau khi sai 3 lần: 0.1.10, 2.4.10, 1.10.0):**
+- **✅ CHECKLIST BẮT BUỘC khi bump (3 bước — làm trước khi ghi số vào file/commit — hiệu lực 2026-09-16 sau khi sai 3 lần: 0.1.10, 2.4.10, 1.10.0):**
   1. **Xác định loại tăng:** fix nhỏ = patch, feature = minor, nhớ major = major.
   2. **Tính số mới rồi TỰ KIỂM TRA:** mỗi thành phần (major.minor.patch) phải còn MỘT chữ số 0-9. Hỏi thẳng: *"Số mới có chỗ nào ≥ 10 không?"* — CÓ = SAI, tính lại theo nhớ (9 → về 0, nhớ sang trái).
   3. **Ghi 2 nơi đồng thời + đối chiếu:** package.json + DEFAULT_VERSION phải cùng một giá trị mới (grep xác nhận), rồi mới commit.
 
 ### Ngôn ngữ & Ghi nhớ (bắt buộc tuân thủ):
 
-- **Luôn sử dụng tiếng Việt Nam** để tương tác với Anh — bao gồm cả suy nghĩ nội bộ, phần trả lời, và giao tiếp. KHÔNG dùng tiếng Anh trong suy nghĩ hay phản hồi.
-- **Sau mỗi lần push lên GitHub (nếu Đại ca chọn mục 2 hoặc 3), PHẢI cập nhật AGENTS.md** — lưu lại lịch sử thay đổi (giai đoạn mới, commit mới, lesson learned) để lần sau AI đọc lại biết đúng context.
+- **Luôn sử dụng tiếng Việt Nam** để tương tác với Đại Ca — bao gồm cả suy nghĩ nội bộ, phần trả lời, và giao tiếp. KHÔNG dùng tiếng Anh trong suy nghĩ hay phản hồi.
+- **Sau mỗi lần push lên GitHub, PHẢI cập nhật AGENTS.md** — lưu lại lịch sử thay đổi (giai đoạn mới, commit mới, lesson learned) để lần sau AI đọc lại biết đúng context.
 
 ---
 
@@ -462,8 +447,8 @@ src/
 
 ## 7. Deploy & Environment
 
-- **GitHub repo:** `giong-vn-v6`
-- **Vercel URL:** `https://giong-vn.vercel.app`
+- **GitHub repo:** `ec-holdings`
+- **Vercel URL:** `https://ec-holdings-three.vercel.app`
 - **Env vars trên Vercel:**
   - `DATABASE_URL` = Neon connection string
   - `BETTER_AUTH_URL` = Vercel domain
@@ -484,22 +469,22 @@ src/
 
 ## 9. Lưu ý khi làm việc
 
-- **Không chạy local** — Đại ca sẽ test trên Vercel
+- **Không chạy local** — Đại Ca sẽ test trên Vercel
 - **Push lên GitHub** là đủ — Vercel auto-deploy
 - **Không có CI checks** bắt buộc trước merge
 - **Test tự động (unit)** khi cần — viết trong `*.test.ts` hoặc `*.test.mjs`
 - **Ngôn ngữ code:** TypeScript, Tiếng Việt cho UI text
 - **Formatting:** Prettier + ESLint (đã cấu hình sẵn)
-- **Được phép truy cập Vercel** — Em có quyền dùng Playwright/headless browser để login vào website Vercel (`https://giong-vn-v6.vercel.app`) và xem toàn bộ dự án. Login credentials: `cuongpk.giong04@gmail.com` / `Admin123!`. Dùng khi cần kiểm tra UI, debug lỗi trên deployment thực tế.
+- **Được phép truy cập Vercel** — Em có quyền dùng Playwright/headless browser để login vào website Vercel (`https://ec-holdings-three.vercel.app`) và xem toàn bộ dự án. Login credentials: `tcmdx2026@gmail.com` / `Admin123!`. Dùng khi cần kiểm tra UI, debug lỗi trên deployment thực tế.
 - **Được phép truy cập Neon** — Em có quyền truy cập Neon PostgreSQL console để kiểm tra dữ liệu, chạy SQL query, và thực hiện lệnh cần thiết. Kết nối qua `DATABASE_URL` env var trên Vercel. Dùng khi cần verify data, debug query, hoặc thực hiện migration thủ công.
 - **Được phép truy cập Cloudinary** — Em có quyền truy cập Cloudinary console (`https://console.cloudinary.com`) để kiểm tra Media Library (ảnh/file đã upload), dung lượng, debug upload lỗi. Dùng khi cần verify file đã lên CDN, tìm file thừa, hoặc kiểm tra lỗi transformation.
-- **Quy tắc truy cập trực tiếp 3 hệ thống (bổ sung 2026-09-10, theo yêu cầu Đại ca):** Em được phép truy cập TRỰC TIẾP, KHÔNG cần hỏi lại từng lần: (1) **Vercel** — website + CLI (`vercel logs`, `vercel env ls`, `vercel project ls`, deploy...); (2) **Neon** — console SQL + mọi query đọc/kiểm tra; (3) **Cloudinary** — console + API. Mặc định được phép: đọc, kiểm tra, debug, xem logs. VẪN PHẢI HỎI Đại ca trước khi làm thao tác PHÁ HỦY: xóa sạch dữ liệu (drop table, delete all), xóa media hàng loạt, reset môi trường, đổi cấu hình quan trọng (domain, env, connection string). Lưu ý GĐ 71: env đánh dấu Sensitive trên Vercel không pull được qua CLI (`[SENSITIVE]`) — cần giá trị thật thì nhờ Đại ca cung cấp hoặc bỏ dấu Sensitive.
+- **Quy tắc truy cập trực tiếp 3 hệ thống (bổ sung 2026-09-10, theo yêu cầu Đại Ca):** Em được phép truy cập TRỰC TIẾP, KHÔNG cần hỏi lại từng lần: (1) **Vercel** — website + CLI (`vercel logs`, `vercel env ls`, `vercel project ls`, deploy...); (2) **Neon** — console SQL + mọi query đọc/kiểm tra; (3) **Cloudinary** — console + API. Mặc định được phép: đọc, kiểm tra, debug, xem logs. VẪN PHẢI HỎI Đại Ca trước khi làm thao tác PHÁ HỦY: xóa sạch dữ liệu (drop table, delete all), xóa media hàng loạt, reset môi trường, đổi cấu hình quan trọng (domain, env, connection string). Lưu ý GĐ 71: env đánh dấu Sensitive trên Vercel không pull được qua CLI (`[SENSITIVE]`) — cần giá trị thật thì nhờ Đại Ca cung cấp hoặc bỏ dấu Sensitive.
 - **Quy ước tiết kiệm egress Neon (GĐ 159 — 18/09/2026, sau khi 4.83GB/5GB):** Neon free chỉ 5GB egress/project/tháng (đo cả dữ liệu Neon gửi ra cho Vercel, agent, lẫn SELECT trong Neon Console). Quy tắc bắt buộc:
   1. **KHÔNG `select *` trên bảng có cột payload lớn** (`result_full` — bảng TX-DS 6-8MB/job; `attachments`/`reactions` jsonb...). Liệt kê cột cụ thể ở MỌI query chạy thường xuyên (poll, hydrate, claim).
   2. Payload lớn chỉ tải khi user chủ động bấm xem (`loadTxdsResult` phân trang), không bao giờ nằm trong response poll.
   3. Khi debug trên Neon Console: tránh `SELECT *` bảng lớn — đọc của em cũng tính egress; ưu tiên `COUNT(*)` + LIMIT.
-  4. Hydrate app tổng tải ~2-3MB/phiên mở — chấp nhận được; KHÔNG thêm collection mới vào hydrate nếu không cần thiết (dùng lazy-load theo trang như employees/centers).
-  5. Theo dõi mức egress: Neon Console → Organization → Usage (ảnh Đại ca gửi); vượt 60-70% là rà lại query mới thêm trong tháng.
+  4. Hydrate app tải ~2-3MB/phiên mở — chấp nhận được; KHÔNG thêm collection mới vào hydrate nếu không cần thiết (dùng lazy-load theo trang như employees/centers).
+  5. Theo dõi mức egress: Neon Console → Organization → Usage (ảnh Đại Ca gửi); vượt 60-70% là rà lại query mới thêm trong tháng.
 
 ---
 
@@ -512,8 +497,8 @@ src/
 
 ### Bước 1: Clone repo
 ```bash
-git clone https://github.com/cuongpkgiong04-beep/giong-vn-v6.git
-cd giong-vn-v6
+git clone https://github.com/tcmdx2026-wq/ec-holdings.git
+cd ec-holdings
 ```
 
 ### Bước 2: Cài dependencies
