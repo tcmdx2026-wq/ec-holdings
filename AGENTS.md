@@ -5386,8 +5386,8 @@ repo con **10.1.0**.
 >
 > **Verify (checklist GĐ 470 B):** SSR `VERSION 1.1.0` ✓ · POST /api/auth/sign-in/email → 200 user "Admin EC-HOLDINGS" (tcmdx2026@gmail.com) ✓ · get-session 200 ✓.
 >
-> **Còn thiếu (chờ ĐH):** `CLOUDINARY_*` chưa có giá trị trên máy → upload ảnh chấm công trên domain mới sẽ lỗi khi dùng; `ZAI_API_KEY` code không dùng (không cần); `TUNNEL_*` không cần (Neon là nguồn chính app này).
+> **Còn thiếu (chờ ĐH):** ~~`CLOUDINARY_*` chưa có giá trị~~ **ĐÃ BỔ SUNG ĐỦ 23/10 chiều** — ĐH cấp đủ (cloud `osevyaag` · API Key `362392452577686` · secret) → set 3 biến + redeploy `dpl_E3CcCoVoZ7wLJFkJ5s3WUvpZXjLS` READY; verify Cloudinary Admin API với key/secret → HTTP 200 ✓ (credentials hợp lệ); cũng đã thêm 3 biến vào `.env.local` máy công ty. `ZAI_API_KEY` code không dùng (không cần); `TUNNEL_*` không cần (Neon là nguồn chính app này).
 >
-> **Cần ĐH quyết:** domain làm việc chính — khuyến nghị dùng `https://ec-holdings.vercel.app` (1.1.0 LIVE + login OK), bỏ dần domain `-three` (không cập nhật được). Mục 7 "Vercel URL" cần đổi theo khi ĐH chốt.
+> **ĐH CHỐT 23/10 chiều: chuyển hẳn sang `https://ec-holdings.vercel.app`** — AGENTS.md mục 7 (Vercel URL + env vars thực tế 9 biến) + mục 9 (Playwright URL) + curl examples GĐ 470 đã đổi (`a45a42c`); entry lịch sử giữ nguyên. Domain `-three` bỏ dần — thuộc project cũ account khác, không cập nhật được từ team tcmdx2026.
 >
 > **Version:** KHÔNG bump (chờ lệnh Push — quy tắc ĐA AGENT). EC-HOLDINGS **1.1.0**.
