@@ -86,24 +86,6 @@ const NAV: NavItem[] = [
   { to: "/nhan-su", label: "Nhân sự", icon: Users, group: "Danh mục" },
   { to: "/trung-tam", label: "Trung tâm", icon: Building2, group: "Danh mục" },
   { to: "/ho-so", label: "Hồ sơ", icon: FolderOpen, group: "Danh mục" },
-  // GĐ B hệ sinh thái (2026-09-14): app con Bán hàng — link NGOÀI mở tab mới;
-  // CHỈ Admin thấy (visibleNav lọc isAdmin), phân quyền chi tiết cho user thường làm sau khi app con hoàn thành
-  // GĐ 228a: URL theo env — local .env.local ghi APP_CON_URL=http://localhost:3100;
-  // production Vercel ghi URL production (rỗng → fallback như cũ).
-  // Dùng VITE_APP_CON_URL: client bundle CHỈ thấy biến VITE_* (process.env.APP_CON_URL
-  // là undefined trong browser → NAV fallback production dù SSR đúng — bắt qua E2E).
-  {
-    to:
-      (import.meta.env &&
-        (import.meta.env as Record<string, string | undefined>).VITE_APP_CON_URL) ||
-      "https://giong-banhang.vercel.app",
-    label: "Bán hàng",
-    icon: ShoppingCart,
-    group: "DỰ ÁN",
-  },
-  // GĐ 315: 2 module DỰ ÁN NỘI BỘ — khung placeholder, nội dung triển khai sau
-  // (yêu cầu Đại ca 2026-10-05). Route nội bộ + CHỈ Admin thấy
-  // (visibleNav lọc isAdmin — cùng pattern nhóm DỰ ÁN GĐ 107).
   { to: "/bien-ban-hop", label: "Biên bản họp", icon: NotebookPen, group: "DỰ ÁN" },
   { to: "/zalo", label: "Zalo", icon: MessagesSquare, group: "DỰ ÁN" },
   { to: "/admin/approvals", label: "Duyệt đăng ký", icon: ShieldCheck, group: "Quản trị" },

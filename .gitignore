@@ -28,3 +28,5 @@ giong-apps-cli/
 
 # ui-ux-pro-max skill — rác runtime (GĐ 347)
 .agents/skills/ui-ux-pro-max/scripts/__pycache__/
+
+.vercel
