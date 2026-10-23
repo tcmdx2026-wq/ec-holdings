@@ -7,6 +7,6 @@ DELETE FROM centers
 WHERE code != 'VP';
 
 -- Verify remaining centers
-SELECT code, name, short_name, city, kind, status
+SELECT code, name, short_name, city, status
 FROM centers
 ORDER BY code;
