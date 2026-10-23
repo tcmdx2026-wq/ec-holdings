@@ -109,7 +109,7 @@ const FALLBACK_EMPLOYEES: Employee[] = [
 ];
 
 const FALLBACK_CENTERS: Center[] = [
-  { code: 'VP', name: 'Van phong cong ty EC-HOLDINGS', short: 'Van phong', city: '', kind: 'Van phong' },
+  { code: 'VP', name: 'Van phong cong ty EC-HOLDINGS', short: 'Van phong', city: '', kind: 'Văn phòng' },
 ];
 
 const initial: PersistSlice = {
