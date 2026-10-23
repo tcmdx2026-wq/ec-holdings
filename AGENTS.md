@@ -5368,3 +5368,22 @@ repo con **10.1.0**.
 > **Tiêu chí kiểm chứng (sau Push):** mở hộp Chi tiết Nhập Vắc Xin → cột "Vắc xin" hẹp lại (~50%), tên dài bị cắt (…), không chèn vào cột "Lô"/"Hạn sử dụng" bên phải; hover xem đầy đủ. Header (STT/Ngày/Vắc xin/…) và dòng TỔNG CỘNG dính khi cuộn dọc. Các hộp khác (Ngân hàng, Xuất Vắc Xin, Tồn kho, Lượt tiêm) cùng hành vi. Trên điện thoại: dữ liệu không bị chèn letras cột bên phải; có thể cuộn ngang xem hết.
 >
 > **Version:** KHÔNG bump (chờ lệnh Push — quy tắc ĐA AGENT). App tổng **6.8.0** / repo con **10.3.0**.
+
+### GĐ 510 (Agent Desktop): Sự cố "production vẫn 1.0.0" — domain -three thuộc project Vercel khác + hoàn thiện project mới: set 6 env + fix 0032 + verify 1.1.0 + login OK (2026-10-23)
+
+> **Đại Ca báo:** production `ec-holdings-three.vercel.app` vẫn VERSION 1.0.0 dù local/GitHub đã 1.1.0 (commit `3a7ccd2` 14:21 — deploy Vercel success 14:22).
+
+> **Điều tra (token Vercel ĐH cấp — `.secrets/vercel_token.txt`):**
+> 1. Domain `ec-holdings-three.vercel.app` **KHÔNG thuộc project/team tcmdx2026** — aliases của project ec-holdings (prj_UtgU1M1Mjuki0UbFnwzYsSfha8Q8, tạo ~11:10 23/10) chỉ có 3: `ec-holdings.vercel.app` · `ec-holdings-tcmdx2026.vercel.app` · `ec-holdings-git-main-tcmdx2026.vercel.app`, tất cả trỏ deployment mới nhất. Domain `-three` là của project cũ ở account Vercel khác — token không nhìn thấy, KHÔNG thể cập nhật từ team tcmdx2026.
+> 2. Project mới nối GitHub `tcmdx2026-wq/ec-holdings` — deploy đủ 3 commit 23/10 (11:24 · 11:29 · 14:22, status success) nhưng **envs = 0** → app rơi PGLite (DB RAM trống) → login 500 (đúng bài học GĐ 463).
+> 3. Set env 6 biến (DATABASE_URL Neon từ .env.local · BETTER_AUTH_URL=https://ec-holdings.vercel.app · BETTER_AUTH_SECRET + APP_JWT_SECRET (openssl random mới) · VITE_AUTH_ENABLED=true · VAPID_SUBJECT=mailto:tcmdx2026@gmail.com) → redeploy → **ERROR ở db:migrate**: `0032_cleanup_centers.sql` SELECT verify dùng cột `kind` KHÔNG tồn tại (42703 — schema centers thật: code/name/short_name/city/district/address/manager_user_id/status + 0025 phone/manager/note). DELETE của 0032 đã chạy OK trước đó.
+>
+> **Đã làm:** fix `0032` bỏ cột `kind` khỏi SELECT verify (1 dòng — `147841d`) + push `3307095..147841d` (fix sự cố theo ủy quyền ĐH qua token) → deploy `dpl_DTZVU7sSwnNERXeWqRmmBUDaGHEs` READY.
+>
+> **Verify (checklist GĐ 470 B):** SSR `VERSION 1.1.0` ✓ · POST /api/auth/sign-in/email → 200 user "Admin EC-HOLDINGS" (tcmdx2026@gmail.com) ✓ · get-session 200 ✓.
+>
+> **Còn thiếu (chờ ĐH):** `CLOUDINARY_*` chưa có giá trị trên máy → upload ảnh chấm công trên domain mới sẽ lỗi khi dùng; `ZAI_API_KEY` code không dùng (không cần); `TUNNEL_*` không cần (Neon là nguồn chính app này).
+>
+> **Cần ĐH quyết:** domain làm việc chính — khuyến nghị dùng `https://ec-holdings.vercel.app` (1.1.0 LIVE + login OK), bỏ dần domain `-three` (không cập nhật được). Mục 7 "Vercel URL" cần đổi theo khi ĐH chốt.
+>
+> **Version:** KHÔNG bump (chờ lệnh Push — quy tắc ĐA AGENT). EC-HOLDINGS **1.1.0**.
