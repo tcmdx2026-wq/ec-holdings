@@ -1,0 +1,28 @@
+{
+  "id": "dpl_7mTArunbJSFUq5skat4D66SpWcNU",
+  "name": "giong-banhang",
+  "url": "giong-banhang-ofc0e1jft-giong-vn.vercel.app",
+  "target": "production",
+  "readyState": "BLOCKED",
+  "createdAt": 1790688804432,
+  "aliases": [
+    "giong-banhang-giong-vn.vercel.app",
+    "giong-banhang-git-main-giong-vn.vercel.app"
+  ],
+  "builds": [
+    {
+      "id": "bld_flnp7lxpa",
+      "deploymentId": "dpl_7mTArunbJSFUq5skat4D66SpWcNU",
+      "entrypoint": ".",
+      "readyState": "READY",
+      "readyStateAt": 1790688804222,
+      "createdAt": 1790688804222,
+      "createdIn": "sfo1",
+      "use": "@vercel/vc-build",
+      "config": {},
+      "output": [],
+      "fingerprint": null
+    }
+  ],
+  "contextName": "giong-vn"
+}

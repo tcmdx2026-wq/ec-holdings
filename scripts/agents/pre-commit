@@ -1,0 +1,83 @@
+#!/bin/sh
+# GIONG VN — CỔNG COMMIT FILE DÙNG CHUNG (GĐ 495, 21/10/2026)
+# Cài: python scripts/agents/install-hooks.py      (áp cho MỌI worktree của repo)
+# Kiểm: python scripts/agents/install-hooks.py --check
+#
+# 2 tai nạn thật (GĐ 470 · GĐ 494): phiên này commit NUỐT bài dở của phiên khác, và
+# phiên khác commit bản LỆCH làm XOÁ bài của phiên này. Hook chặn đúng 2 đường đó:
+#   (1) MẤT ENTRY: so TẬP entry (`### GĐ/C.x`) + dòng registry (`| GĐ/C.x`) giữa HEAD
+#       và bản staged — thiếu bất kỳ mục nào ⇒ CHẶN (so theo tập nên KHÔNG bị lệch
+#       CRLF/LF làm báo động giả). Cố ý dọn/tách archive → [shared-approved].
+#   (2) CỔNG AN TOÀN: sửa file dùng chung phải commit qua
+#       python scripts/agents/shared-doc.py commit --entry "GĐ xxx" -m "..."
+#       (ghép CHỈ entry của mình lên bản HEAD, không nuốt bài phiên khác).
+# Mọi lần commit file dùng chung đều SNAPSHOT tự động (bảo hiểm bài dở).
+
+FILES="AGENTS.md AGENT_REGISTRY.md AGENTS_ARCHIVE.md"
+GITDIR=$(git rev-parse --git-dir 2>/dev/null) || exit 0
+COMMONDIR=$(git rev-parse --git-common-dir 2>/dev/null) || COMMONDIR="$GITDIR"
+
+staged=""
+for f in $FILES; do
+    if git diff --cached --name-only -- "$f" 2>/dev/null | grep -q .; then
+        staged="$staged $f"
+    fi
+done
+[ -z "$staged" ] && exit 0
+
+# --- SNAPSHOT tự động (giữ 50 bản gần nhất) ---
+SNAP="$COMMONDIR/giong-shared-snapshots"
+mkdir -p "$SNAP" 2>/dev/null
+TS=$(date +%Y%m%d_%H%M%S)
+for f in $staged; do
+    [ -f "$f" ] && cp -f "$f" "$SNAP/$(echo "$f" | tr '/' '_').$TS" 2>/dev/null
+done
+ls -1t "$SNAP" 2>/dev/null | tail -n +51 | while read -r old; do rm -f "$SNAP/$old"; done
+
+# --- duyệt tay ---
+if grep -q "\[shared-approved\]" "$GITDIR/COMMIT_EDITMSG" 2>/dev/null; then exit 0; fi
+
+# --- (1) MẤT ENTRY/REGISTRY? (so theo TẬP — miễn nhiễm CRLF/LF) ---
+TMP=$(mktemp -d 2>/dev/null || echo "$COMMONDIR/giong-hook-tmp")
+mkdir -p "$TMP"
+LOST=0
+LIST=""
+for f in $staged; do
+    for pat in '^###[[:space:]]+(GĐ|C\.)[[:space:]]*[0-9]+' '^\|[[:space:]]*(GĐ|C\.)[[:space:]]*[0-9]+'; do
+        git show "HEAD:$f" 2>/dev/null | tr -d '\015' \
+            | grep -oE "$pat" | sed 's/[[:space:]][[:space:]]*/ /g' | sort -u > "$TMP/h.$$"
+        git show ":$f" 2>/dev/null | tr -d '\015' \
+            | grep -oE "$pat" | sed 's/[[:space:]][[:space:]]*/ /g' | sort -u > "$TMP/s.$$"
+        MISS=$(comm -23 "$TMP/h.$$" "$TMP/s.$$")
+        if [ -n "$MISS" ]; then
+            N=$(echo "$MISS" | grep -c .)
+            LOST=$((LOST + N))
+            LIST="$LIST $(echo "$MISS" | head -4 | tr '\n' ',')"
+        fi
+    done
+done
+rm -f "$TMP/h.$$" "$TMP/s.$$" 2>/dev/null
+if [ "$LOST" -gt 0 ]; then
+    echo ""
+    echo "⛔ CỔNG FILE DÙNG CHUNG — commit này LÀM MẤT $LOST mục (entry/registry) đang có ở HEAD:"
+    echo "   $LIST"
+    echo "   Nghĩa là bản trong máy đang LỆCH (thiếu bài của phiên khác) — nếu commit thì"
+    echo "   bài đó MẤT trên lịch sử chung."
+    echo "   → Xem 2 đầu:      python scripts/agents/shared-doc.py check"
+    echo "   → Commit an toàn: python scripts/agents/shared-doc.py commit --entry \"GĐ xxx\" -m \"...\""
+    echo "   → Cố ý (tách archive/dọn dẹp): thêm [shared-approved] vào commit message."
+    echo ""
+    exit 1
+fi
+
+# --- (2) CỔNG AN TOÀN: buộc commit qua script cổng ---
+if [ "$GIONG_SHARED_OK" = "1" ]; then exit 0; fi
+echo ""
+echo "⛔ CỔNG FILE DÙNG CHUNG (GĐ 495) — commit này sửa:$staged"
+echo "   Để KHÔNG nuốt bài dở của phiên song song, hãy commit qua cổng an toàn:"
+echo "     python scripts/agents/shared-doc.py commit --entry \"GĐ xxx\" -m \"docs(...): ...\""
+echo "        (hoặc --all-new nếu file chỉ có entry của mình)"
+echo "   Cổng ghép CHỈ entry của mình lên bản HEAD và giữ nguyên bài dở phiên khác."
+echo "   Chắc chắn 100% mình kiểm soát nội dung → dùng: git commit --no-verify"
+echo ""
+exit 1

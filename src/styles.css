@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+
+  --color-bg: #f2f4f3;
+  --color-surface: #fbfcfb;
+  --color-surface-2: #e8eeeb;
+  --color-ink: #12211c;
+  --color-muted: #5a6b65;
+  --color-faint: #84938d;
+  --color-line: #d3ddd8;
+  --color-accent: #1c6b58;
+  --color-accent-hover: #155647;
+  --color-accent-fg: #f3faf7;
+  --color-accent-soft: #dceee8;
+  --color-forest: #12211c;
+  --color-forest-2: #1a2e27;
+  --color-forest-fg: #e7eee9;
+  --color-forest-muted: #9aada5;
+  --color-ok: #147a4b;
+  --color-ok-soft: #d8f0e4;
+  --color-warn: #b45309;
+  --color-warn-soft: #fde8d0;
+  --color-danger: #b42318;
+  --color-danger-fg: #fff8f7;
+  --color-danger-soft: #f8d7d4;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  --shadow-card:
+    0 0 0 1px rgba(18, 33, 28, 0.06),
+    0 1px 2px -1px rgba(18, 33, 28, 0.06),
+    0 2px 8px -2px rgba(18, 33, 28, 0.04);
+  --shadow-card-hover:
+    0 0 0 1px rgba(18, 33, 28, 0.08),
+    0 4px 16px -4px rgba(18, 33, 28, 0.1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== GĐ 140 (16/09/2026) — Sidebar mở → nội dung TRƯỢT theo, không bị che =====
+   Yêu cầu Đại ca: khi sidebar hover mở (app tổng w-44/176px, app con w-80/320px),
+   màn hình chính thu lại để mép phải sidebar DÍNH mép trái nội dung (1 khối liền).
+   Cơ chế: aside.sidebar-desktop + div.app-content là sibling liền kề — hover theo
+   dõi bằng selector thuần, transition 300ms ĐỒNG BỘ với sidebar (duration-300).
+   Chỉ desktop (lg+); chiều rộng đẩy đúng theo hover:w-* từng app. */
+@media (min-width: 1024px) {
+  aside.sidebar-desktop:hover ~ div.app-content {
+    padding-left: 176px; /* = w-44 của sidebar app tổng mở */
+  }
+  aside.sidebar-desktop ~ div.app-content {
+    transition: padding-left 300ms ease-out; /* đồng bộ sidebar transition-all 300ms */
+  }
+}

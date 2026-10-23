@@ -1,0 +1,9 @@
+tunnel: https://theoretical-curious-narrative-consultancy.trycloudflare.com
+
+insert: {"rows":[]}
+
+cancel-khong-N (translator tự thêm N): {"rows":[]}
+
+read-back: {"rows":[{"error":"Đã hủy bởi người dùng"}]}
+
+cleanup: OK

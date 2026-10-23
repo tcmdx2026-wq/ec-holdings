@@ -1,0 +1,30 @@
+node_modules
+# Build outputs
+.vercel
+dist
+.output
+# Environment files
+.env
+.env.*
+# OS files
+.DS_Store
+Thumbs.db
+# IDE
+.vscode
+.idea
+# TanStack temp
+.tanstack/
+# Debug artifacts
+page.html
+.env*
+
+# Google Service Account key (GĐ 103 — backup Drive)
+.secrets/
+
+# Monorepo giong-apps (repo riêng — clone nội bộ để làm việc, GĐ A 2026-09-14)
+giong-apps/
+# Worktree Agent CLI (GĐ 233 — nhánh agent-cli, song song không chờ nhau)
+giong-apps-cli/
+
+# ui-ux-pro-max skill — rác runtime (GĐ 347)
+.agents/skills/ui-ux-pro-max/scripts/__pycache__/

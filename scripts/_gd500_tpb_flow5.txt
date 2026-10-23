@@ -1,0 +1,17 @@
+1) login OK
+2) dong modal: truoc=1 sau=0
+3) da vao form 'Xuat sao ke'
+4) click 'Tuy chinh' OK — .icon-date count = 2
+5) click 'Excel' OK
+6) da bam 'Xuat sao ke' (form)
+7) tim duong vao 'Sao ke da xuat'...
+   innerText: Trang chủ | Quản lý giao dịch | Tất cả dịch vụ | Tài khoản & Thẻ | Tài khoản thanh toán | Thẻ | Ủy quyền chi qua TKTT | Tiểu khoản | Chuyển tiền & Thanh toán | Giao dịch ngoại tệ | Tiền gửi & Đầu tư | Tín dụng | Tiện ích | Kết nối | Cài đặt | Xuất sao kê | TRAN MANH HUNG  | 1644884801 | Yêu cầu xuất sao kê thành công |  | Yêu cầu của Quý khách đang được xử lý, TPBank Biz sẽ gửi thông báo khi hoàn tất. |  | Yêu cầu khác | Sao kê đã xuất
+   lan 1: rows = 0
+   lan 2: rows = 0
+   lan 3: rows = 0
+   lan 4: rows = 0
+   lan 5: rows = 0
+   lan 6: rows = 0
+   lan 7: rows = 0
+   lan 8: rows = 0
+8) KHONG tai duoc file (het 8 lan thu)

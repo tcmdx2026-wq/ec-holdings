@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "rea": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "rea-agents@5.0.0",
+        "mcp"
+      ],
+      "env": {}
+    },
+    "weknora": {
+      "type": "http",
+      "url": "http://localhost:8082/mcp",
+      "headers": {
+        "Authorization": "Bearer a968d894d70640d124a106faf315df9efdc1c5f61602fee4"
+      }
+    }
+  }
+}

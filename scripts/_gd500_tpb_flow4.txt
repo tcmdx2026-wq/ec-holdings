@@ -1,0 +1,25 @@
+login OK
+A) click 'Xuất sao kê' ...
+--- sau 'Xuất sao kê' ---
+innerText: Trang chủ | Quản lý giao dịch | Tất cả dịch vụ | Tài khoản & Thẻ | Tài khoản thanh toán | Thẻ | Ủy quyền chi qua TKTT | Tiểu khoản | Chuyển tiền & Thanh toán | Giao dịch ngoại tệ | Tiền gửi & Đầu tư | Tín dụng | Tiện ích | Kết nối | Cài đặt | Quay lại trang trước | Xuất sao kê | TRAN MANH HUNG  | 1644884801 | Tài khoản | 1169 8866 789 | CONG TY CO PHAN GIONG VIET NAM | Thời gian | 1 tháng gần nhất | 3 tháng gần nhất | Tháng hiện tại | Tùy chỉnh | Định dạng sao kê | Mẫu TPBank | Mẫu chuẩn quốc tế MT940 | Excel | PDF | Tuỳ chọn nâng cao | Hủy bỏ | Xuất sao kê | Quý khách có thể kiểm tra thông tin các file Sao kê đã xuất trong vòng 24 giờ tại đây.
+   <button> '' aria='Collapse sidebar' ph='' cls='v2-sidebar__toggle'
+   <button> 'Tài khoản & Thẻ' aria='' ph='' cls='v2-dropdown-header'
+   <button> '' aria='Open submenu' ph='' cls='v2-nav-item__arrow-btn ng-star-inserte'
+   <button> 'Chuyển tiền & Thanh toán' aria='' ph='' cls='v2-dropdown-header'
+   <button> 'Giao dịch ngoại tệ' aria='' ph='' cls='v2-dropdown-header'
+   <button> 'Tiền gửi & Đầu tư' aria='' ph='' cls='v2-dropdown-header'
+   <button> 'Tín dụng' aria='' ph='' cls='v2-dropdown-header'
+   <button> 'Tiện ích' aria='' ph='' cls='v2-dropdown-header'
+   <button> 'Kết nối' aria='' ph='' cls='v2-dropdown-header'
+   <button> '' aria='' ph='' cls='ng-star-inserted'
+   <button> 'Hủy bỏ' aria='' ph='' cls='btn btn-secondary'
+   <button> 'Xuất sao kê' aria='' ph='' cls='btn btn-primary ms-4'
+   <input> '' aria='search-left-sidebar' ph='Tìm kiếm...' cls='v2-input__field'
+   <input> '' aria='' ph='' cls='mat-radio-input cdk-visually-hidden'
+   <input> '' aria='' ph='' cls='mat-radio-input cdk-visually-hidden'
+   <input> '' aria='' ph='' cls='mat-slide-toggle-input cdk-visually-hi'
+   (thay nut 'Hủy' — KHONG bam, chi liet ke)
+B) click 'Sao kê' -> 'Sao kê đã xuất' ...
+   loi: TimeoutError: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for get_by_text("Sao kê", exact=True).first

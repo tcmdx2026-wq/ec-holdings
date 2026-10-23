@@ -1,0 +1,188 @@
+
+==========================================================================================
+JOB 66d3e8b4 | 2026-10-21 00:27:40.553166 | report=bank-tpb | 20/10/2026→20/10/2026
+==========================================================================================
+Tool thoát mã 1: ages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Locator.click: Error: strict mode violation: get_by_text("Sao kê", exact=True) resolved to 2 elements:
+    1) <span _ngcontent-nvp-c275="">Sao kê</span> aka get_by_role("button", name="HOME_V2.ACCOUNT_WIDGET.BANK_STATEMENT")
+    2) <div class="v2-bottom-sheet__section-title ng-star-inserted"> Sao kê </div> aka get_by_label("Dịch vụ khác").get_by_text("Sao kê", exact=True)
+
+Call log:
+  - waiting for get_by_text("Sao kê", exact=True)
+
+
+
+==========================================================================================
+JOB 9c7e69b6 | 2026-10-21 00:28:10.626270 | report=bank-tpb | 20/10/2026→20/10/2026
+==========================================================================================
+Tool thoát mã 1: ages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Locator.click: Error: strict mode violation: get_by_text("Sao kê", exact=True) resolved to 2 elements:
+    1) <span _ngcontent-wua-c283="">Sao kê</span> aka get_by_role("button", name="HOME_V2.ACCOUNT_WIDGET.BANK_STATEMENT")
+    2) <div class="v2-bottom-sheet__section-title ng-star-inserted"> Sao kê </div> aka get_by_label("Dịch vụ khác").get_by_text("Sao kê", exact=True)
+
+Call log:
+  - waiting for get_by_text("Sao kê", exact=True)
+
+
+
+==========================================================================================
+JOB 14c348fe | 2026-10-21 00:28:40.705804 | report=bank-tpb | 20/10/2026→20/10/2026
+==========================================================================================
+Tool thoát mã 1: ages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Locator.click: Error: strict mode violation: get_by_text("Sao kê", exact=True) resolved to 2 elements:
+    1) <span _ngcontent-mqk-c300="">Sao kê</span> aka get_by_role("button", name="HOME_V2.ACCOUNT_WIDGET.BANK_STATEMENT")
+    2) <div class="v2-bottom-sheet__section-title ng-star-inserted"> Sao kê </div> aka get_by_label("Dịch vụ khác").get_by_text("Sao kê", exact=True)
+
+Call log:
+  - waiting for get_by_text("Sao kê", exact=True)
+
+
+
+==========================================================================================
+JOB 2c5188fa | 2026-10-21 09:46:16.199588 | report=misa-ban-hang-api | 20/10/2026→20/10/2026
+==========================================================================================
+Tool thoát mã 1:    · 20/10/2026 TD HD107932610200812597619: InvalidInvno
+      · 20/10/2026 TD HD107932610200932508462: InvalidInvno
+      · 20/10/2026 TD HD107932610200935042371: InvalidInvno
+      · 20/10/2026 TD HD107932610200957567428: InvalidInvno
+      · 20/10/2026 TD HD107932610201012540331: InvalidInvno
+      · 20/10/2026 TD HD107932610201616188405: InvalidInvno
+      · 20/10/2026 HM : JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+      · 20/10/2026 QO : misa headers
+      · 20/10/2026 LB : misa headers
+      · 20/10/2026 PY : misa headers
+      · 20/10/2026 TO : misa headers
+      · 20/10/2026 ML : misa headers
+      · 20/10/2026 TS : misa headers
+      · 20/10/2026 TP : misa headers
+      · 20/10/2026 CĐ : misa headers
+================================================================
+
+
+==========================================================================================
+JOB 5c631807 | 2026-10-21 09:58:17.228238 | report=misa-ban-hang-api | 20/10/2026→20/10/2026
+==========================================================================================
+Tool thoát mã 1: ===========================================================
+📊 TỔNG KẾT GĐ 463 — 20/10/2026 → 20/10/2026 (1 ngày)
+   ✅ Phiếu tạo thành công: 0
+   📗 Phiếu đã ghi sổ: 0/0
+   ❌ Lỗi: 18
+      · 20/10/2026 TD : misa headers
+      · 20/10/2026 HM : misa headers
+      · 20/10/2026 QO : misa headers
+      · 20/10/2026 LB : misa headers
+      · 20/10/2026 PY : misa headers
+      · 20/10/2026 TO : misa headers
+      · 20/10/2026 ML : misa headers
+      · 20/10/2026 TS : misa headers
+      · 20/10/2026 TP : misa headers
+      · 20/10/2026 CĐ : misa headers
+      · 20/10/2026 SĐ : misa headers
+      · 20/10/2026 BH : misa headers
+      · 20/10/2026 TĐ : misa headers
+      · 20/10/2026 TA : misa headers
+      · 20/10/2026 ĐX : misa headers
+================================================================
+
+
+==========================================================================================
+JOB 97560a02 | 2026-10-21 10:07:52.650788 | report=tkkh | 21/10/2026→21/10/2026
+==========================================================================================
+Đã hủy bởi người dùng (bấm Hủy trên web khi job đang chạy).
+
+
+==========================================================================================
+JOB d68c7522 | 2026-10-21 10:24:51.603263 | report=tkkh | 21/10/2026→21/10/2026
+==========================================================================================
+Đã hủy bởi người dùng (bấm Hủy trên web khi job đang chạy).
+
+
+==========================================================================================
+JOB a49deaf8 | 2026-10-21 17:55:03.842892 | report=xuatkho | 21/10/2026→21/10/2026
+==========================================================================================
+Tool thoát mã 1: , strict=True, **params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 593, in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("link", name=" Kho")
+
+
+
+==========================================================================================
+JOB e84049a1 | 2026-10-21 17:56:34.015152 | report=xuatkho | 21/10/2026→21/10/2026
+==========================================================================================
+Tool thoát mã 1: , strict=True, **params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 593, in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("link", name=" Kho")
+
+
+
+==========================================================================================
+JOB a9d43717 | 2026-10-21 17:57:34.218289 | report=xnkt | 21/10/2026→21/10/2026
+==========================================================================================
+Tool thoát mã 1: or
+    await self._frame.wait_for_selector(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for get_by_role("link", name="Kho").first to be visible
+
+
+
+==========================================================================================
+JOB 63f38712 | 2026-10-21 17:58:34.590530 | report=xnkt | 21/10/2026→21/10/2026
+==========================================================================================
+Tool thoát mã 1: or
+    await self._frame.wait_for_selector(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for get_by_role("link", name="Kho").first to be visible
+
+
+
+==========================================================================================
+JOB c3987e63 | 2026-10-21 21:47:45.685809 | report=hddt | 21/10/2026→21/10/2026
+==========================================================================================
+Tool thoát mã 1: rict=True, **params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 593, in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("link", name=" Báo cáo")
+

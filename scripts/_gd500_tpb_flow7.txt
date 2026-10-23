@@ -1,0 +1,26 @@
+1) login OK
+2) modal dong
+3) innerText: Trang chủ | Quản lý giao dịch | Tất cả dịch vụ | Tài khoản & Thẻ | Tài khoản thanh toán | Thẻ | Ủy quyền chi qua TKTT | Tiểu khoản | Chuyển tiền & Thanh toán | Giao dịch ngoại tệ | Tiền gửi & Đầu tư | Tín dụng | Tiện ích | Kết nối | Cài đặt | Quay lại trang trước | Sao kê đã xuất | TRAN MANH HUNG  | 1644884801 | 1169 8866 789 - CONG TY CO PHAN GIONG VIET NAM | Số tài khoản (1) | Xuất sao kê | Lưu ý: Yêu cầu sẽ được lưu trữ trong 24h. | THỜI GIAN YÊU CẦU	SỐ TÀI KHOẢN	TÊN TÀI KHOẢN	TIÊU CHÍ	SỐ LƯỢNG GIAO DỊCH	TRẠNG THÁI	TẢI XUỐNG | 21/10/2026 | 23:15:01	1169 8866 789	CONG TY CO PHAN GIONG VIET NAM	 | Thời gian: 18/10/2026 - 18/10/2026 | Luồng tiền: Tất cả | Loại giao dịch: Tất cả | Định dạng: Mẫu TPBank - Excel | 	0	Đã xuất file	
+   [tr] count=2
+      'THỜI GIAN YÊU CẦU	SỐ TÀI KHOẢN	TÊN TÀI KHOẢN	TIÊU CHÍ	SỐ LƯỢNG GIAO DỊCH	TRẠNG THÁI	TẢI XUỐNG' aria='' cls='table-title'
+      '21/10/2026 | 23:15:01	1169 8866 789	CONG TY CO PHAN GIONG VIET NAM	 | Thời gian: 18/10/2026 - 18/10/' aria='' cls='ng-star-inserted'
+   [app-icon-v2] count=28
+      '' aria='' cls=''
+      '' aria='' cls='v2-input-search__icon'
+      '' aria='' cls='v2-nav-item__icon'
+      '' aria='' cls='v2-nav-item__icon'
+      '' aria='' cls='v2-nav-item__icon'
+      '' aria='' cls='v2-dropdown-header__chevron'
+      '' aria='' cls='v2-nav-item__icon'
+   [button] count=24
+      '' aria='Collapse sidebar' cls='v2-sidebar__toggle'
+      'Tài khoản & Thẻ' aria='' cls='v2-dropdown-header'
+      '' aria='Open submenu' cls='v2-nav-item__arrow-btn ng-star-inserted'
+      'Chuyển tiền & Thanh toán' aria='' cls='v2-dropdown-header'
+      'Giao dịch ngoại tệ' aria='' cls='v2-dropdown-header'
+      'Tiền gửi & Đầu tư' aria='' cls='v2-dropdown-header'
+      'Tín dụng' aria='' cls='v2-dropdown-header'
+4) rows=2 | row dung ky count=1
+   row text: 21/10/2026 | 23:15:01	1169 8866 789	CONG TY CO PHAN GIONG VIET NAM	 | Thời gian: 18/10/2026 - 18/10/2026 | Luồng tiền: Tất cả | Loại giao dịch: Tất cả | Định dạng: Mẫu TPBank - Excel | 	0	Đã xuất file
+   row co 1 button
+5) TAI THANH CONG: TPBANK_HISTORY11698866789_21102026_231502088.xlsx (15489 bytes)

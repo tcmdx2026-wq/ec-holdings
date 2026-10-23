@@ -1,0 +1,43 @@
+1) login...
+   login OK = True
+2) modal count = 1
+--- outerHTML (2500 ky tu dau) ---
+<div class="v2-intro-modal v2-intro-modal--open"><div class="v2-intro-modal__container"><div class="v2-intro-modal__body"><div class="v2-intro-modal__action"><button type="button" aria-label="Đóng" class="v2-intro-modal__close-btn ng-star-inserted"><app-icon-v2 name="cancel" size="md"><span class="v2-icon v2-icon--md" role="presentation" aria-hidden="true" style="mask: url(&quot;assets/v2/icon/stroke/cancel.svg&quot;) center center / contain no-repeat; background-color: currentcolor;"></span></app-icon-v2></button><!----></div><div class="v2-intro-modal__content"><div class="v2-intro-modal__illus-text"><img alt="" aria-hidden="true" class="v2-intro-modal__illustration v2-intro-modal__illustration--custom" src="assets/v2/image/welcome-vibrant-light.svg"><div class="v2-intro-modal__text"><h2 class="v2-intro-modal__title ng-star-inserted">Xin chào TRAN MANH HUNG,</h2><!----><p class="v2-intro-modal__description ng-star-inserted">Cảm ơn bạn đã đồng hành cùng TPBank Biz.
+Bắt đầu khám phá những điều mới ngay nhé!</p><!----><!----></div></div><div class="v2-intro-modal__features ng-star-inserted"><div class="v2-intro-modal__feature-item ng-star-inserted"><div class="v2-intro-modal__feature-icon"><!----><app-icon-v2 size="xl" color="fg-primary" class="ng-star-inserted"><span class="v2-icon v2-icon--xl" role="presentation" aria-hidden="true" style="mask: url(&quot;assets/v2/icon/stroke/finance-overview.svg&quot;) center center / contain no-repeat; background-color: var(--v2-fg-primary, currentColor);"></span></app-icon-v2><!----></div><span class="v2-intro-modal__feature-label">Quản lý 
+trực quan</span></div><div class="v2-intro-modal__feature-item ng-star-inserted"><div class="v2-intro-modal__feature-icon"><!----><app-icon-v2 size="xl" color="fg-primary" class="ng-star-inserted"><span class="v2-icon v2-icon--xl" role="presentation" aria-hidden="true" style="mask: url(&quot;assets/v2/icon/stroke/message-notification.svg&quot;) center center / contain no-repeat; background-color: var(--v2-fg-primary, currentColor);"></span></app-icon-v2><!----></div><span class="v2-intro-modal__feature-label">Nhắc việc 
+thông minh</span></div><div class="v2-intro-modal__feature-item ng-star-inserted"><div class="v2-intro-modal__feature-icon"><!----><app-icon-v2 size="xl" color="fg-primary" class="ng-star-inserted"><span class="v2-icon v2-icon--xl" role="presentation" aria-hidden="true" style="mask: url(&quot;assets/v2/icon/stroke/personalize.svg&quot;) center center / contain no-rep
+3) phan tu bam duoc trong modal: 8
+   [0] {'tag': 'BUTTON', 'cls': 'v2-intro-modal__close-btn ng-star-inserted', 'aria': 'Đóng', 'txt': ''}
+   [1] {'tag': 'SPAN', 'cls': 'v2-icon v2-icon--md', 'aria': None, 'txt': ''}
+   [2] {'tag': 'IMG', 'cls': 'v2-intro-modal__illustration v2-intro-modal__illustration--custom', 'aria': None, 'txt': ''}
+   [3] {'tag': 'SPAN', 'cls': 'v2-icon v2-icon--xl', 'aria': None, 'txt': ''}
+   [4] {'tag': 'SPAN', 'cls': 'v2-icon v2-icon--xl', 'aria': None, 'txt': ''}
+   [5] {'tag': 'SPAN', 'cls': 'v2-icon v2-icon--xl', 'aria': None, 'txt': ''}
+   [6] {'tag': 'BUTTON', 'cls': 'v2-intro-modal__btn-secondary ng-star-inserted', 'aria': None, 'txt': 'Bỏ qua'}
+   [7] {'tag': 'BUTTON', 'cls': 'v2-intro-modal__btn-primary ng-star-inserted', 'aria': None, 'txt': 'Khám phá ngay'}
+   thu Escape -> chua dong
+   thu nut aria-label close -> LOI TimeoutError: Locator.click: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator("div.v2-intro-modal butto
+   thu element class *close* -> LOI TimeoutError: Locator.click: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator("div.v2-intro-modal [clas
+   thu anh/icon cuoi modal -> LOI TimeoutError: Locator.click: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator("div.v2-intro-modal img, 
+   thu JS remove modal -> OK
+--- KET QUA THU DONG ---
+   Escape: chưa đóng
+   nut aria-label close: LỖI TimeoutError Locator.click: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator("div.
+   element class *close*: LỖI TimeoutError Locator.click: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator("div.
+   anh/icon cuoi modal: LỖI TimeoutError Locator.click: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator("div.
+   JS remove modal: ĐÓNG ĐƯỢC
+4) kiem tra 'Sao kê' sau khi dong modal:
+   so element 'Sao kê' (exact) = 2
+   click 'Sao kê'.first OK — thay 'Sao kê tài khoản' = False

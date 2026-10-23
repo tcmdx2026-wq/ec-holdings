@@ -1,0 +1,8 @@
+login OK
+modal con: 0
+--- item trong popup/dropdown dang mo ---
+[[role=menuitem]] count=3
+    'Xuất sao kê' | aria=''
+    'Sao kê đã xuất' | aria=''
+    'Sao kê định kỳ' | aria=''
+'Sao kê tài khoản' count = 0

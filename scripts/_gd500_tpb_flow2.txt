@@ -1,0 +1,48 @@
+1) login...
+   login OK
+--- sau login (modal mo): phan tu bam duoc (visible) ---
+   <button> '' aria='Collapse sidebar' cls='v2-sidebar__toggle'
+   <button> 'Tài khoản & Thẻ' aria='' cls='v2-dropdown-header'
+   <button> 'Chuyển tiền & Thanh toán' aria='' cls='v2-dropdown-header'
+   <button> 'Giao dịch ngoại tệ' aria='' cls='v2-dropdown-header'
+   <button> 'Tiền gửi & Đầu tư' aria='' cls='v2-dropdown-header'
+   <button> 'Tín dụng' aria='' cls='v2-dropdown-header'
+   <button> 'Tiện ích' aria='' cls='v2-dropdown-header'
+   <button> 'Kết nối' aria='' cls='v2-dropdown-header'
+   <button> '' aria='' cls='v2-header__cif-link ng-tns-c244-42'
+   <button> '' aria='Edit widgets' cls='v2-header__action-btn v2-header__action-'
+   <button> '' aria='Help Center' cls='v2-header__action-btn ng-tns-c244-42'
+   <button> '' aria='Notifications' cls='mat-menu-trigger v2-header__action-btn v'
+   <button> '' aria='' cls='v2-card-account__copy-btn'
+   <button> 'Chi tiết' aria='' cls='v2-card-account__detail-link ng-star-ins'
+   <button> '' aria='Ẩn số dư' cls='v2-card-account__balance-toggle'
+   <button> 'Chuyển tiền đơn' aria='MENU_V2.CARD_ACCOUNT_FUND_TRANSFER' cls='v2-card-account__shortcut-btn'
+   <button> 'Mã QR' aria='HOME_V2.ACCOUNT_WIDGET.QR_CODE' cls='v2-card-account__shortcut-btn'
+   <button> 'Lịch sử giao dịch' aria='HOME_V2.ACCOUNT_WIDGET.HISTORY_TRANSACTION' cls='v2-card-account__shortcut-btn'
+2) dong modal intro:
+   JS click nut Dong -> modal con: 1
+   JS remove -> modal con: 0
+3) click 'Sao kê' (exact, first):
+   so element = 2
+   click OK
+--- sau click 'Sao kê': phan tu bam duoc (visible) ---
+   <button> '' aria='Collapse sidebar' cls='v2-sidebar__toggle'
+   <button> 'Tài khoản & Thẻ' aria='' cls='v2-dropdown-header'
+   <button> 'Chuyển tiền & Thanh toán' aria='' cls='v2-dropdown-header'
+   <button> 'Giao dịch ngoại tệ' aria='' cls='v2-dropdown-header'
+   <button> 'Tiền gửi & Đầu tư' aria='' cls='v2-dropdown-header'
+   <button> 'Tín dụng' aria='' cls='v2-dropdown-header'
+   <button> 'Tiện ích' aria='' cls='v2-dropdown-header'
+   <button> 'Kết nối' aria='' cls='v2-dropdown-header'
+   <button> '' aria='' cls='v2-header__cif-link ng-tns-c244-42'
+   <button> '' aria='Edit widgets' cls='v2-header__action-btn v2-header__action-'
+   <button> '' aria='Help Center' cls='v2-header__action-btn ng-tns-c244-42'
+   <button> '' aria='Notifications' cls='mat-menu-trigger v2-header__action-btn v'
+   <button> '' aria='' cls='v2-card-account__copy-btn'
+   <button> 'Chi tiết' aria='' cls='v2-card-account__detail-link ng-star-ins'
+   <button> '' aria='Ẩn số dư' cls='v2-card-account__balance-toggle'
+   <button> 'Chuyển tiền đơn' aria='MENU_V2.CARD_ACCOUNT_FUND_TRANSFER' cls='v2-card-account__shortcut-btn'
+   <button> 'Mã QR' aria='HOME_V2.ACCOUNT_WIDGET.QR_CODE' cls='v2-card-account__shortcut-btn'
+   <button> 'Lịch sử giao dịch' aria='HOME_V2.ACCOUNT_WIDGET.HISTORY_TRANSACTION' cls='v2-card-account__shortcut-btn'
+   'Sao kê tài khoản' count = 0
+   innerText dau trang: Trang chủ | Quản lý giao dịch | Tất cả dịch vụ | Tài khoản & Thẻ | Chuyển tiền & Thanh toán | Giao dịch ngoại tệ | Tiền gửi & Đầu tư | Tín dụng | Tiện ích | Kết nối | Cài đặt | TRAN MANH HUNG | Người nhập | CONG TY CO PHAN GIONG VIET NAM | Mã người dùng: 1644884801 | TH | 1169 8866 789 | Chi tiết | 3,447,210 | VND | Chuyển tiền đơn | Mã QR | Lịch sử giao dịch | Sao kê | Xuất sao kê | Sao kê đã xuất | Sao kê định kỳ | Phiếu nợ/có | Dịch vụ yêu thích | Tuỳ chỉnh | Tiền gửi có kỳ hạn | Nộp thuế | Thanh toán dịch vụ | Chuyển tiền theo lô | Ủy quyền chi qua TKTT | Chia sẻ biến động số dư | Đề xuất vay | Xem tất cả | Báo cáo thu chi | Chi tiết | Hôm nay | Tuần này | Tháng này | Tổng thu | 0 | VND | Tổng chi | 0 | VND | Chênh lệch | 0 | VND | Giao dịch gần nhất | Tiền đi | -119.3 Tr | VND | Tín dụng |  | Bạn chư
