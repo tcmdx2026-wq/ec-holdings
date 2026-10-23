@@ -237,13 +237,13 @@
 > **B. SAU KHI DEPLOY (push xong ~1-2 phút) — test login THẬT, KHÔNG tin chữ "Ready":**
 > ```bash
 > # 1) Đăng nhập app → PHẢI trả JSON có "user"
-> curl -s -X POST "https://ec-holdings-three.vercel.app/api/auth/sign-in/email" \
+> curl -s -X POST "https://ec-holdings.vercel.app/api/auth/sign-in/email" \
 >   -H "Content-Type: application/json" \
 >   -d '{"email":"tcmdx2026@gmail.com","password":"Admin123!"}' -c cookies.txt
 > # 2) Session đọc được → có "user"
-> curl -s -b cookies.txt "https://ec-holdings-three.vercel.app/api/auth/get-session"
+> curl -s -b cookies.txt "https://ec-holdings.vercel.app/api/auth/get-session"
 > ```
-> Cách nhanh nhất (đúng luồng thật): mở `https://ec-holdings-three.vercel.app` → đăng nhập → kiểm tra dashboard.
+> Cách nhanh nhất (đúng luồng thật): mở `https://ec-holdings.vercel.app` → đăng nhập → kiểm tra dashboard.
 
 > **C. PHÁT HIỆN LỖI → SỬA NGAY, KHÔNG CHỜ ĐẠI CA NHẮC:**
 > ```bash
@@ -448,11 +448,15 @@ src/
 ## 7. Deploy & Environment
 
 - **GitHub repo:** `ec-holdings`
-- **Vercel URL:** `https://ec-holdings-three.vercel.app`
+- **Vercel URL:** `https://ec-holdings.vercel.app`
 - **Env vars trên Vercel:**
   - `DATABASE_URL` = Neon connection string
-  - `BETTER_AUTH_URL` = Vercel domain
+  - `BETTER_AUTH_URL` = https://ec-holdings.vercel.app
   - `BETTER_AUTH_SECRET` = random secret
+  - `APP_JWT_SECRET` = khoá ký SSO handoff (secret mới, GĐ 510)
+  - `VITE_AUTH_ENABLED` = true
+  - `VAPID_SUBJECT` = mailto:tcmdx2026@gmail.com
+  - `CLOUDINARY_CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` = upload ảnh — chờ ĐH cấp API Key
 
 ---
 
@@ -475,7 +479,7 @@ src/
 - **Test tự động (unit)** khi cần — viết trong `*.test.ts` hoặc `*.test.mjs`
 - **Ngôn ngữ code:** TypeScript, Tiếng Việt cho UI text
 - **Formatting:** Prettier + ESLint (đã cấu hình sẵn)
-- **Được phép truy cập Vercel** — Em có quyền dùng Playwright/headless browser để login vào website Vercel (`https://ec-holdings-three.vercel.app`) và xem toàn bộ dự án. Login credentials: `tcmdx2026@gmail.com` / `Admin123!`. Dùng khi cần kiểm tra UI, debug lỗi trên deployment thực tế.
+- **Được phép truy cập Vercel** — Em có quyền dùng Playwright/headless browser để login vào website Vercel (`https://ec-holdings.vercel.app`) và xem toàn bộ dự án. Login credentials: `tcmdx2026@gmail.com` / `Admin123!`. Dùng khi cần kiểm tra UI, debug lỗi trên deployment thực tế.
 - **Được phép truy cập Neon** — Em có quyền truy cập Neon PostgreSQL console để kiểm tra dữ liệu, chạy SQL query, và thực hiện lệnh cần thiết. Kết nối qua `DATABASE_URL` env var trên Vercel. Dùng khi cần verify data, debug query, hoặc thực hiện migration thủ công.
 - **Được phép truy cập Cloudinary** — Em có quyền truy cập Cloudinary console (`https://console.cloudinary.com`) để kiểm tra Media Library (ảnh/file đã upload), dung lượng, debug upload lỗi. Dùng khi cần verify file đã lên CDN, tìm file thừa, hoặc kiểm tra lỗi transformation.
 - **Quy tắc truy cập trực tiếp 3 hệ thống (bổ sung 2026-09-10, theo yêu cầu Đại Ca):** Em được phép truy cập TRỰC TIẾP, KHÔNG cần hỏi lại từng lần: (1) **Vercel** — website + CLI (`vercel logs`, `vercel env ls`, `vercel project ls`, deploy...); (2) **Neon** — console SQL + mọi query đọc/kiểm tra; (3) **Cloudinary** — console + API. Mặc định được phép: đọc, kiểm tra, debug, xem logs. VẪN PHẢI HỎI Đại Ca trước khi làm thao tác PHÁ HỦY: xóa sạch dữ liệu (drop table, delete all), xóa media hàng loạt, reset môi trường, đổi cấu hình quan trọng (domain, env, connection string). Lưu ý GĐ 71: env đánh dấu Sensitive trên Vercel không pull được qua CLI (`[SENSITIVE]`) — cần giá trị thật thì nhờ Đại Ca cung cấp hoặc bỏ dấu Sensitive.
