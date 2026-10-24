@@ -5436,3 +5436,23 @@ repo con **10.1.0**.
 > **Lưu ý cho Đại Ca:** tab trình duyệt/điện thoại cần tải lại 1-2 lần để vứt icon cache cũ (cache-bust v4 đã ép); shortcut Android cũ nếu còn logo GIONG → xóa + "Thêm vào màn hình chính" lại; Google Search hiển thị favicon mới sau khi Googlebot crawl lại (vài giờ → vài ngày).
 
 > **Version:** EC-HOLDINGS **1.2.0** — ĐÃ PUSH + ĐÃ LIVE.
+
+### GĐ 513 (Agent Desktop): Đổi "Trung tâm" → "Địa điểm" + vị trí mặc định Cổ Bi — Gia Lâm (PA-1 ĐH chốt) — đã commit chờ Push (2026-10-24)
+
+> **Đại Ca yêu cầu (24/10, trang /trung-tam):** (1) sidebar "Trung tâm" → "Địa điểm"; (2) heading khung "Trung tâm tiêm chủng" → "Địa điểm hoạt động"; (3) vị trí mặc định = "Số 68 ngõ 142 đường Cổ Bi, Xã Gia Lâm, Thành phố Hà Nội, Việt Nam" thay cho 8/61 Nguyễn Sơn — Bồ Đề.
+
+> **Khảo sát:** marker bản đồ lấy tọa độ hard-code `src/lib/center-coords.ts` (VP = 21.04743/105.87796 — khu Nguyễn Sơn — Bồ Đề ✓ trùng mô tả ĐH); cột "Vị trí địa lý" = reverse geocode Nominatim từ tọa độ (KHÔNG đọc DB address) + cache localStorage vĩnh viễn theo center; DB Neon hiện chỉ 1 center (VP sau migration 0032). File center-coords chỉ trang /trung-tam dùng — không ảnh hưởng trang khác; GPS check-in lấy từ điện thoại — không liên quan.
+
+> **Geocode:** Nominatim bị chặn từ máy (HTTP 000) → dùng **Photon (OSM)**: tìm đúng "Ngõ 142 Đường Cổ Bi" (Xã Cổ Bi → Xã Gia Lâm) — ngõ chạy 105.9406→105.9461, lat ~21.027-21.028. ĐH chốt **PA-1: đầu ngõ 142 sát đường Cổ Bi = 21.02844, 105.94057** (PA-2 giữa ngõ 21.0278/105.9433, PA-3 giữa đoạn đường — loại).
+
+> **Đã làm (commit chờ Push):**
+> 1. `app-shell.tsx:87` — nav label "Trung tâm" → **"Địa điểm"** (route /trung-tam giữ nguyên).
+> 2. `trung-tam.tsx:356` — PageHeader title → **"Địa điểm hoạt động"**.
+> 3. `center-coords.ts` — VP: lat 21.04743→**21.02844**, lng 105.87796→**105.94057**, cluster "Long Biên" → **"Gia Lâm"** (NL + 18 center khác giữ nguyên — DB chỉ có VP).
+> 4. `trung-tam.tsx:20` — GEO_CACHE_KEY `giong-vn-center-geo` → **`ec-holdings-center-geo-v2`** (cache-bust — người dùng thấy địa chỉ reverse-geocode mới từ tọa độ mới, không dính cache cũ).
+>
+> **Verify:** không node để tsc — 4 chỗ sửa đều 1 dòng nguyên trạng + import không đổi; cú pháp suy từ pattern hiện có trong file.
+>
+> **Dự đoán sau Push:** sidebar "Địa điểm" + heading "Địa điểm hoạt động" hiện ngay; marker bản đồ nhảy sang giao Ngõ 142 — Đường Cổ Bi (fitBounds tự căn); cột "Vị trí địa lý" hiển thị địa chỉ khu Cổ Bi — Gia Lâm theo OSM (dạng "Ngõ 142 Đường Cổ Bi, Cổ Bi, Gia Lâm, Hà Nội" — không phải nguyên văn chuỗi ĐH đưa; muốn hiển thị NGUYÊN VĂN chuỗi ĐH cần thêm trường address tĩnh — chờ ĐH yêu cầu). Không cần update DB (address VP không dùng cho hiển thị này).
+>
+> **Version:** KHÔNG bump (chờ lệnh Push — quy tắc ĐA AGENT). EC-HOLDINGS **1.2.0**.
