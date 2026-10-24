@@ -5496,3 +5496,25 @@ repo con **10.1.0**.
 > **Lưu ý vận hành:** click Playwright trên trang này nhiều lúc timeout do actionability — dùng JS native click (dispatchEvent bubbles) qua evaluate hoạt động ổn định với React 19 (mẹo cho phiên sau).
 
 > **Version:** KHÔNG bump (data-only — precedent GĐ 419). EC-HOLDINGS **1.3.0**.
+
+### GĐ 516 (Agent Desktop): Bật backup Google Drive — OAuth client riêng + refresh token + backup chạy OK (2026-10-24)
+
+> **Đại Ca yêu cầu:** bật backup Drive (phòng mất dữ liệu Neon — em nêu trong GĐ 513 report "cần sớm làm"). Đại Ca cấp tài khoản Google (lưu `.secrets/google_account.txt` — mật khẩu plaintext, .gitignore chặn) + đồng ý cài Google CLI.
+
+> **Đã chuẩn bị:** gcloud CLI (zip + Python 3.12 winget — máy không node/python sẵn) · project GCP "EC-HOLDINGS Backup" (id `distributed-map-512604-b5`) · Drive API enabled · OAuth client **Desktop** (client_id `276362374055-...apps.googleusercontent.com` + secret — lưu `.secrets/google_oauth_client_{id,secret}.txt`) · Test user tcmdx2026@gmail.com.
+
+> **2 chướng ngại Google chặn automation (ghi cho phiên sau):**
+> 1. **Client mặc định của gcloud SDK bị Google disable** cho user OAuth flow ("401 disabled_client" — warning scope Drive sắp bị chặn) → BẮT BUỘC client riêng.
+> 2. Form Console (Angular) **chặn mọi sự kiện giả lập** ở ô email chip-list (dispatchEvent + cua.keypress + Playwright fill/Enter đều không cập nhật control → "An email address must be selected") — Test user phải **điền tay bằng người thật** (ĐH làm — 0 → 1 test user ✓). Mẹo qua được: **native `element.click()` (isTrusted=true)** hoạt động với hầu hết nút console; mat-chip-list thì KHÔNG.
+
+> **Đã làm:**
+> 1. Consent flow với client riêng: gcloud `auth application-default login --client-id-file` (JSON "installed") + `--scopes=drive,cloud-platform` chạy **detached qua Start-Process** (background bash giết process con — bài học); browser: chọn account → **Cho phép** → gcloud nhận → **ADC file có refresh_token** ✓.
+> 2. Đổi access token (curl oauth2.googleapis.com/token) → tạo folder **"EC-HOLDINGS-Backup"** → folder_id `1_nLv01-zaI9-oA4FA9wQqk5-R1zvd0S0`.
+> 3. Set **5 env Vercel**: GOOGLE_CLIENT_ID · GOOGLE_CLIENT_SECRET · GOOGLE_REFRESH_TOKEN · GOOGLE_DRIVE_FOLDER_ID · **CRON_SECRET** (endpoint /api/cron/backup yêu cầu Bearer CRON_SECRET — trước đó 13 env thiếu biến này nên 401) → redeploy `dpl_Aq3x6oSN...` READY.
+> 4. **Chạy backup thật:** GET /api/cron/backup + Bearer → **HTTP 200 ok:true** — JSON `giong-vn-backup-2026-10-24-0725.json` + XLSX `.xlsx`.
+>
+> **✅ Verify:** list Drive API trong folder → **2 file có thật**: json 6.260B + xlsx 17.496B (modifiedTime 07:25Z) ✓ · refresh token đổi token lần 2 OK ✓ · version **1.3.0** giữ nguyên (không đụng code — chỉ env + cấu hình Google).
+>
+> **Vận hành:** backup tự động **Thứ Hai 02:17** (vercel.json cron — Vercel tự gửi Bearer CRON_SECRET). File rclone/gcloud-sdk trên máy `C:\Users\phamcuong\` (ngoài repo). rclone đã tải nhưng KHÔNG dùng (client gcloud riêng qua được) — rclone.exe còn ở `C:\Users\phamcuong\rclone\`.
+>
+> **Version:** KHÔNG bump (không đụng code — env + cấu hình Google). EC-HOLDINGS **1.3.0**.
