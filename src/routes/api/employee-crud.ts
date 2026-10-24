@@ -130,6 +130,30 @@ export const updateEmployee = createServerFn({ method: "POST" })
   .validator((data: { id: string } & EmployeeInput) => data)
   .handler(async ({ data }) => {
     const sql = await getSql();
+    // GĐ 514 — phân cấp SuperAdmin: bắt buộc đăng nhập; đổi role của ai (kể cả
+    // chính mình) phải là Super Admin (role superadmin/super_admin hoặc root
+    // email). Admin thường chỉ sửa thông tin khác, không tự nâng/hạ vai trò.
+    const { getRequest } = await import("@tanstack/react-start/server");
+    const { auth } = await import("@/lib/auth/server");
+    const request = getRequest();
+    if (!request) throw new Error("Không tìm thấy request");
+    const session = await auth.api.getSession({ headers: request.headers });
+    if (!session?.user) throw new Error("Vui lòng đăng nhập");
+    const actorEmail = (session.user.email ?? "").toLowerCase();
+    const SUPER_ADMIN_ROOT = "tcmdx2026@gmail.com";
+    const actorRows = await sql<{ role: string }>`
+      SELECT role FROM employees WHERE lower(email) = ${actorEmail} LIMIT 1
+    `;
+    const actorRole = (actorRows[0]?.role ?? "User").trim().toLowerCase();
+    const isSuper =
+      actorRole === "superadmin" || actorRole === "super_admin" || actorEmail === SUPER_ADMIN_ROOT;
+    const curRows = await sql<{ role: string }>`
+      SELECT role FROM employees WHERE id = ${data.id} LIMIT 1
+    `;
+    const oldRole = (curRows[0]?.role ?? "User").trim().toLowerCase();
+    if (oldRole !== data.role.trim().toLowerCase() && !isSuper) {
+      throw new Error("Chỉ Super Admin mới được phân quyền Admin/User");
+    }
     // Resolve center code -> center UUID so center_id stays consistent.
     const centers = await sql<{ id: string }>`
       SELECT id FROM centers WHERE code = ${data.center} LIMIT 1

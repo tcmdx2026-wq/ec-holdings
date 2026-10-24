@@ -465,9 +465,11 @@ function TrungTamPage() {
                   >
                     {!CENTER_COORDS[c.code]
                       ? "—"
-                      : geoNames[c.code] === undefined
-                        ? "…"
-                        : geoNames[c.code] || "—"}
+                      : CENTER_COORDS[c.code].address
+                        ? CENTER_COORDS[c.code].address
+                        : geoNames[c.code] === undefined
+                          ? "…"
+                          : geoNames[c.code] || "—"}
                   </td>
                   <td className="px-3 py-2.5 text-muted tabular">{c.phone || "—"}</td>
                   <td className="px-3 py-2.5 text-muted">{c.manager || "—"}</td>
