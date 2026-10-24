@@ -43,7 +43,7 @@ import { Toaster } from "sonner";
 type NavItem = { to: string; label: string; icon: typeof LayoutDashboard; group?: string };
 
 const VERSION_STORAGE_KEY = "giong-vina-version";
-const DEFAULT_VERSION = "1.2.0";
+const DEFAULT_VERSION = "1.3.0";
 
 /** Get app version from Vite env (injected from package.json version during build).
  * Falls back to localStorage-saved version if VITE_APP_VERSION is not set (old builds).
