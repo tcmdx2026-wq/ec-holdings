@@ -5456,3 +5456,29 @@ repo con **10.1.0**.
 > **Dự đoán sau Push:** sidebar "Địa điểm" + heading "Địa điểm hoạt động" hiện ngay; marker bản đồ nhảy sang giao Ngõ 142 — Đường Cổ Bi (fitBounds tự căn); cột "Vị trí địa lý" hiển thị địa chỉ khu Cổ Bi — Gia Lâm theo OSM (dạng "Ngõ 142 Đường Cổ Bi, Cổ Bi, Gia Lâm, Hà Nội" — không phải nguyên văn chuỗi ĐH đưa; muốn hiển thị NGUYÊN VĂN chuỗi ĐH cần thêm trường address tĩnh — chờ ĐH yêu cầu). Không cần update DB (address VP không dùng cho hiển thị này).
 >
 > **Version:** KHÔNG bump (chờ lệnh Push — quy tắc ĐA AGENT). EC-HOLDINGS **1.2.0**.
+
+### GĐ 514 (Agent Desktop): Địa chỉ VP nguyên văn + Phân cấp SuperAdmin/Admin/User (PA-1 ĐH chốt) — Push ngay theo lệnh ĐH + LIVE 1.3.0 (2026-10-24)
+
+> **Đại Ca yêu cầu (24/10, sau GĐ 513):** (1) hiển thị nguyên văn chuỗi "Số 68 ngõ 142 đường Cổ Bi, Xã Gia Lâm, Thành phố Hà Nội, Việt Nam"; (2) phân cấp: anh là Super Admin — Admin dùng toàn quyền app, CHỈ Super Admin phân quyền/quản lý được Admin và user; (3) Push luôn để test.
+
+> **Khảo sát:** form Nhân sự ĐÃ có select User/Admin/SuperAdmin + updateEmployee sửa role — NHƯNG **API không có check quyền nào** (ai gọi cũng đổi được role — kể cả tự nâng SuperAdmin); role nằm ở `employees.role` (không phải bảng user Better Auth); `isAdminRole` đã tính superadmin/super_admin.
+
+> **ĐH chốt PA-1:** role-based + Super Admin gốc = email tcmdx2026@gmail.com.
+
+> **Đã làm (push `54ee14f..ee350dd`):**
+> 1. `center-coords.ts` — type thêm `address?`; VP có address nguyên văn chuỗi ĐH.
+> 2. `trung-tam.tsx` — cột "Vị trí địa lý": ưu tiên `CENTER_COORDS[code].address`, reverse-geocode chỉ fallback (center khác).
+> 3. `employee-crud.ts` — `updateEmployee`: bắt buộc session (pattern getRequest + auth.api.getSession như auth-change-password); **đổi role của ai (kể cả chính mình) → actor phải Super Admin** (role superadmin/super_admin hoặc root email); Admin thường chỉ sửa thông tin khác; chưa đăng nhập → chặn.
+> 4. `employee-form.tsx` — select "Vai trò" `disabled` với non-SuperAdmin + dòng chú thích "Chỉ Super Admin mới được phân quyền vai trò." (SuperAdmin gốc = root email → anh mở được ngay lần đầu).
+>
+> **Bump:** **1.2.0 → 1.3.0** (minor — 2 feature) — package.json + DEFAULT_VERSION + lock root 2 chỗ. Push deploy `dpl_p4arn5WcYFkS1nNiC9cjX9syxKLS` READY.
+
+> **✅ Verify bằng trình duyệt thật (login tcmdx2026@gmail.com):**
+> - Sidebar "Địa điểm" + heading "Địa điểm hoạt động" ✓ (GĐ 513).
+> - Bảng danh sách đơn vị: Cụm **"Gia Lâm"** + Vị trí địa lý **"Số 68 ngõ 142 đường Cổ Bi, Xã Gia Lâm, Thành phố Hà Nội, Việt Nam"** nguyên văn ✓ (chunk route trung-tam trên production chứa chuỗi).
+> - Nhân sự: sửa "Admin EC-HOLDINGS" → Vai trò select **mở** (root) → chọn **SuperAdmin** → Lưu → toast "Đã cập nhật" + bảng hiện **SuperAdmin** ✓ — anh giờ là Super Admin duy nhất trong DB.
+> - curl: version `1.3.0` lần đầu ✓ · login + get-session 200 ✓.
+>
+> **Cách dùng của Đại Ca:** mở Nhân sự → nút sửa nhân viên → Vai trò: User/Admin/SuperAdmin (chỉ anh thấy mở; Admin thường thấy khóa + chú thích). Admin thường giữ toàn quyền sử dụng app; đổi role của ai chỉ mình anh làm được.
+>
+> **Version:** EC-HOLDINGS **1.3.0** — ĐÃ PUSH + ĐÃ LIVE.
