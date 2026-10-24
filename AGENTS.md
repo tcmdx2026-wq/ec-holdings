@@ -5422,3 +5422,17 @@ repo con **10.1.0**.
 > **Dự đoán sau Push:** tab trình duyệt + PWA điện thoại cập nhật icon ngay sau reload 1-2 lần (cache-bust v4 + SW cache tên mới tự xóa cache cũ); shortcut màn hình chính Android nếu icon cũ còn dính → xóa shortcut + thêm lại; **Google Search** hiển thị favicon mới sau khi Googlebot crawl lại (vài giờ → vài ngày, không ép được).
 >
 > **Version:** KHÔNG bump (chờ lệnh Push — quy tắc ĐA AGENT). EC-HOLDINGS **1.1.1**.
+
+### GĐ 512 (Agent Desktop): PA Push đợt icon webapp logo EC — bump 1.1.1 → 1.2.0 + LIVE (2026-10-24)
+
+> **Lệnh "Push" của Đại Ca (24/10, sau GĐ 512).** Rà trùng lặp: 3 commit local = đúng bộ GĐ 512 (claim df9d743 + code d0ffbe5 + docs 88e961f) · remote 0 commit mới (fetch) · working tree chỉ file deleted phiên khác — KHÔNG đụng · GĐ max registry = 512 (của em — không trùng).
+
+> **Bump version:** nội dung = **feature mới** (icon webapp logo EC — UI/PWA) → **minor 1.1.1 → 1.2.0**: package.json + DEFAULT_VERSION + package-lock root 2 chỗ. Checklist số ✓ (1.2.0 — mọi thành phần 1 chữ số).
+
+> **Push:** `6c00707..21602ff` (bump). Deploy `dpl_7dmBHACteheUn8b3HD5Xsw2KDQon` READY (~40s).
+
+> **✅ Verify (checklist GĐ 470 + icon):** curl lần đầu SSR `VERSION 1.2.0` ✓ · HTML có đủ 4 link: `favicon.ico?v=4` + `icons/icon-192.png?v=4` + `icons/icon-180.png?v=4` (apple-touch) + `manifest.json?v=4` ✓ · tải `/icons/icon-192.png?v=4` từ production → xem bằng mắt = **khung cam "EC" logo EC-HOLDINGS** (8080 bytes — khác icon GIONG cũ 21.191 bytes) ✓ · manifest 11/11 src ?v=4 ✓ · login 200 user "Admin EC-HOLDINGS" + get-session 200 ✓.
+
+> **Lưu ý cho Đại Ca:** tab trình duyệt/điện thoại cần tải lại 1-2 lần để vứt icon cache cũ (cache-bust v4 đã ép); shortcut Android cũ nếu còn logo GIONG → xóa + "Thêm vào màn hình chính" lại; Google Search hiển thị favicon mới sau khi Googlebot crawl lại (vài giờ → vài ngày).
+
+> **Version:** EC-HOLDINGS **1.2.0** — ĐÃ PUSH + ĐÃ LIVE.
