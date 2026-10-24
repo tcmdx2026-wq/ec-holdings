@@ -5403,3 +5403,22 @@ repo con **10.1.0**.
 > **✅ Verify (checklist GĐ 470):** env 9/9 ✓ · curl lần đầu SSR `VERSION 1.1.1` ✓ (không ghim deployment cũ) · login tcmdx2026@gmail.com → 200 user "Admin EC-HOLDINGS" ✓ · get-session 200 ✓ — domain chính `https://ec-holdings.vercel.app`.
 
 > **Version:** EC-HOLDINGS **1.1.1** — ĐÃ PUSH + ĐÃ LIVE.
+
+### GĐ 512 (Agent Desktop): Icon webapp = logo EC-HOLDINGS (PA-1 khung cam "EC" vuông) — ĐH chốt, đã commit chờ Push (2026-10-24)
+
+> **Đại Ca yêu cầu:** dùng hình logo làm icon webapp — thể hiện trên Google Search + website (tab trình duyệt) + điện thoại (màn hình chính iOS/Android). **Khảo sát:** icon/manifest đã có từ GĐ 153/155 nhưng **icon hiện tại vẫn là logo GIONG cũ** (người cưỡi ngựa + sóng — sinh 17/09), favicon.svg = chữ "R" lạ, sw.js cache tên giong-vn-v1. Logo gốc `LogoEC.jpg` 1280×1170: khung cam viền trắng + "EC" phía trên, dải chữ "EC-HOLDINGS" xanh phía dưới (nhòe ở 16-32px).
+
+> **ĐH chốt PA-1** (trình 3 PA: khung cam vuông / tròn toàn logo / "EC" tối giản): icon = **phần khung cam viền trắng + chữ "EC"** (crop bỏ dải chữ dưới).
+
+> **Đã làm (commit `—` chờ Push):**
+> 1. `scripts/gd512-generate-icons.ps1` (PowerShell System.Drawing — máy không node/python): quét pixel tìm đáy khung cam (y=1033 — bỏ 137px dải chữ xanh), fit vuông nền trắng 92% → sinh **13 file**: icon 72/96/128/144/152/192/384/512 + icon-180 (apple-touch mới) + maskable 192/512 (nội dung 75% giữa) + favicon-64.png + favicon.ico (ICONDIR+PNG32).
+> 2. `favicon.svg` mới: rect cam **#CE551E** (đo pixel từ logo) + viền trắng + chữ "EC".
+> 3. `__root.tsx`: cache-bust **?v=3 → ?v=4** (icon + manifest), apple-touch đổi `/icons/icon-180.png?v=4`, thêm `shortcut icon` → `/favicon.ico?v=4`.
+> 4. `manifest.json`: 11/11 icon src thêm `?v=4` + thêm entry icon-180.
+> 5. `sw.js`: CACHE_NAME `giong-vn-v1` → `ec-holdings-v1`, static/dynamic `ec-*` (bump tên → SW tự xóa cache cũ), precache `/__grok/icon-180.png` → `/icons/icon-180.png`.
+>
+> **Verify:** xem ảnh icon-192 + icon-192-maskable bằng mắt — khung cam "EC" rõ nét, maskable an toàn vòng tròn ✅ · 11/11 manifest src có ?v=4 ✓ · commit tường minh 18 file (KHÔNG đụng `public/Danh muc.xlsx` deleted của phiên khác) ✓.
+>
+> **Dự đoán sau Push:** tab trình duyệt + PWA điện thoại cập nhật icon ngay sau reload 1-2 lần (cache-bust v4 + SW cache tên mới tự xóa cache cũ); shortcut màn hình chính Android nếu icon cũ còn dính → xóa shortcut + thêm lại; **Google Search** hiển thị favicon mới sau khi Googlebot crawl lại (vài giờ → vài ngày, không ép được).
+>
+> **Version:** KHÔNG bump (chờ lệnh Push — quy tắc ĐA AGENT). EC-HOLDINGS **1.1.1**.
