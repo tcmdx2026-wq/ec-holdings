@@ -84,7 +84,7 @@ const NAV: NavItem[] = [
 
   { to: "/de-nghi", label: "Đề nghị", icon: FileText, group: "Nghiệp vụ" },
   { to: "/nhan-su", label: "Nhân sự", icon: Users, group: "Danh mục" },
-  { to: "/trung-tam", label: "Trung tâm", icon: Building2, group: "Danh mục" },
+  { to: "/trung-tam", label: "Địa điểm", icon: Building2, group: "Danh mục" },
   { to: "/ho-so", label: "Hồ sơ", icon: FolderOpen, group: "Danh mục" },
   { to: "/bien-ban-hop", label: "Biên bản họp", icon: NotebookPen, group: "DỰ ÁN" },
   { to: "/zalo", label: "Zalo", icon: MessagesSquare, group: "DỰ ÁN" },

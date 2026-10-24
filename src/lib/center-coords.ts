@@ -9,7 +9,7 @@ export type CenterCoord = {
 };
 
 export const CENTER_COORDS: Record<string, CenterCoord> = {
-  VP: { lat: 21.04743328, lng: 105.8779599, cluster: "Long Biên" },
+  VP: { lat: 21.02844, lng: 105.94057, cluster: "Gia Lâm" },
   NL: { lat: 21.04743328, lng: 105.8779599, cluster: "Long Biên" },
   LB: { lat: 21.06274423, lng: 105.8968746, cluster: "Long Biên" },
   "SĐ": { lat: 21.0358392, lng: 105.9102846, cluster: "Long Biên" },

@@ -17,7 +17,7 @@ import { reverseGeocode } from "@/routes/api/data";
 export const Route = createFileRoute("/trung-tam")({ component: TrungTamPage });
 
 /** Cache tên vị trí địa lý (reverse geocode từ tọa độ) theo mã trung tâm — tránh gọi lại Nominatim. */
-const GEO_CACHE_KEY = "giong-vn-center-geo";
+const GEO_CACHE_KEY = "ec-holdings-center-geo-v2"; // GĐ 513: đổi key — vứt cache địa chỉ cũ (tọa độ VP đã chuyển Cổ Bi — Gia Lâm)
 
 /**
  * Load Leaflet from CDN at runtime — same approach as Báo cáo Check-in.
@@ -353,7 +353,7 @@ function TrungTamPage() {
 
   return (
     <div>
-      <PageHeader eyebrow="Danh mục" title="Trung tâm tiêm chủng" />
+      <PageHeader eyebrow="Danh mục" title="Địa điểm hoạt động" />
 
       {/* Điểm 5: bản đồ 20 vị trí — giống 100% bản đồ Báo cáo Check-in */}
       <div className="mb-6">
