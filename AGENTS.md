@@ -5482,3 +5482,17 @@ repo con **10.1.0**.
 > **Cách dùng của Đại Ca:** mở Nhân sự → nút sửa nhân viên → Vai trò: User/Admin/SuperAdmin (chỉ anh thấy mở; Admin thường thấy khóa + chú thích). Admin thường giữ toàn quyền sử dụng app; đổi role của ai chỉ mình anh làm được.
 >
 > **Version:** EC-HOLDINGS **1.3.0** — ĐÃ PUSH + ĐÃ LIVE.
+
+### GĐ 515 (Agent Desktop): Đổi tên đơn vị VP trong DB — "Văn phòng Công ty Gióng Việt Nam" → "Văn phòng Công ty EC-HOLDINGS" (data-only, 2026-10-24)
+
+> **Đại Ca yêu cầu (24/10, sau GĐ 514):** sửa luôn tên đơn vị cũ còn chữ Gióng.
+
+> **Nguồn:** bảng `centers` (Neon) — hàng code `VP`, trường `name` — hiển thị trang /trung-tam + dialog chi tiết. Không đụng code.
+
+> **Đã làm:** qua UI app thật (browser): login tcmdx2026@gmail.com → /trung-tam → chế độ Danh sách → bấm hàng VP → dialog "Chi tiết trung tâm" → "Chỉnh sửa thông tin" → Tên đầy đủ = "Văn phòng Công ty EC-HOLDINGS" → "Lưu thay đổi" → toast "Đã cập nhật". `updateCenter` ghi Neon + hydrate lại.
+
+> **✅ Verify:** sau Lưu — bảng hiện tên mới, không còn "Gióng Việt Nam" ✓; **reload trang** — tên mới vẫn còn (đọc từ DB) ✓. Trên dialog chi tiết: Cụm hiển thị vẫn "Long Biên" (trường district trong DB — khác cluster code GĐ 513; không đụng vì ngoài phạm vi — nếu ĐH muốn đồng bộ "Gia Lâm" thì update district VP).
+
+> **Lưu ý vận hành:** click Playwright trên trang này nhiều lúc timeout do actionability — dùng JS native click (dispatchEvent bubbles) qua evaluate hoạt động ổn định với React 19 (mẹo cho phiên sau).
+
+> **Version:** KHÔNG bump (data-only — precedent GĐ 419). EC-HOLDINGS **1.3.0**.
