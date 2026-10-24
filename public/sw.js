@@ -1,7 +1,7 @@
-const CACHE_NAME = "giong-vn-v1";
+const CACHE_NAME = "ec-holdings-v1";
 // Bumped to v2: stale-while-revalidate strategy + cleanup of old v1 caches
-const STATIC_CACHE = "giong-vn-static-v2";
-const DYNAMIC_CACHE = "giong-vn-dynamic-v2";
+const STATIC_CACHE = "ec-static-v1";
+const DYNAMIC_CACHE = "ec-dynamic-v1";
 
 // Static assets to pre-cache on install
 const PRECACHE_URLS = [
@@ -9,7 +9,7 @@ const PRECACHE_URLS = [
   "/offline",
   "/favicon.svg",
   "/giong-vina-logo.png",
-  "/__grok/icon-180.png",
+  "/icons/icon-180.png",
 ];
 
 // Install: pre-cache critical assets

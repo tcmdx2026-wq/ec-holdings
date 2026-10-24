@@ -25,12 +25,13 @@ export const Route = createRootRoute({
       },
     ],
     links: [
-      // GĐ 153: favicon + PWA icon = logo EC-HOLDINGS (tách hình tròn từ logo gốc).
-      // GĐ 155: icon TRÒN full-khung + cache-bust ?v=3 — ép trình duyệt bỏ bản cache cũ.
-      { rel: "icon", type: "image/png", href: "/icons/icon-192.png?v=3" },
+      // GĐ 512: icon = logo EC-HOLDINGS (khung cam "EC" vuông — sinh lại từ LogoEC.jpg).
+      // Cache-bust ?v=4 — ép trình duyệt bỏ icon logo GIONG cũ (?v=3).
+      { rel: "icon", type: "image/png", href: "/icons/icon-192.png?v=4" },
+      { rel: "shortcut icon", href: "/favicon.ico?v=4" },
       { rel: "stylesheet", href: appCss },
-      { rel: "manifest", href: "/manifest.json?v=3" },
-      { rel: "apple-touch-icon", href: "/icons/icon-192.png?v=3" },
+      { rel: "manifest", href: "/manifest.json?v=4" },
+      { rel: "apple-touch-icon", href: "/icons/icon-180.png?v=4" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
       { rel: "stylesheet", href: "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" },
