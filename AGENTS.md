@@ -5391,3 +5391,15 @@ repo con **10.1.0**.
 > **ĐH CHỐT 23/10 chiều: chuyển hẳn sang `https://ec-holdings.vercel.app`** — AGENTS.md mục 7 (Vercel URL + env vars thực tế 9 biến) + mục 9 (Playwright URL) + curl examples GĐ 470 đã đổi (`a45a42c`); entry lịch sử giữ nguyên. Domain `-three` bỏ dần — thuộc project cũ account khác, không cập nhật được từ team tcmdx2026.
 >
 > **Version:** KHÔNG bump (chờ lệnh Push — quy tắc ĐA AGENT). EC-HOLDINGS **1.1.0**.
+
+### GĐ 511 (Agent Desktop): PA Push đợt GĐ 510 — bump 1.1.0 → 1.1.1 + LIVE production (2026-10-24)
+
+> **Lệnh "Push" của Đại Ca (24/10).** Rà trùng lặp theo nguyên tắc 3: 0 commit local chưa push (GĐ 510 đã push hết) · 0 commit remote mới (fetch — không agent nào push sau) · nhánh phụ rỗng · working tree chỉ file `public/Danh muc.xlsx` deleted của phiên khác — KHÔNG đụng · registry không có 🔒 dở trong phạm vi (505/506 của app tổng — khác worktree).
+
+> **Bump version:** nội dung push = fix migration 0032 (1 dòng) + cấu hình env Vercel (9 biến: 6 cơ bản + 3 Cloudinary) + đổi domain chính — KHÔNG feature mới → **patch 1.1.0 → 1.1.1**: `package.json` + `DEFAULT_VERSION` (app-shell.tsx) + **package-lock root 2 chỗ** (root lock đang lệch 1.0.0 từ trước — sửa cho khớp; các match "1.1.1" khác trong lock là thư viện ngoài trùng số — lesson GĐ 328, giữ nguyên). Checklist số GĐ 138 ✓ (mọi thành phần 1 chữ số). ⚠️ Dằn vặt khi sửa lock: lệnh `sed -n ... -i` kết hợp làm file rỗng tạm thời — khôi phục từ git ngay + làm lại bằng 2 lệnh sed tách biệt (bài học: KHÔNG bao giờ ghép -n với -i).
+
+> **Push:** `3c91756..5d2bbbe` (claim + bump). Deploy `dpl_9u1nmufPSNUdWESBozTqJFPiSkGF` READY (~40s).
+
+> **✅ Verify (checklist GĐ 470):** env 9/9 ✓ · curl lần đầu SSR `VERSION 1.1.1` ✓ (không ghim deployment cũ) · login tcmdx2026@gmail.com → 200 user "Admin EC-HOLDINGS" ✓ · get-session 200 ✓ — domain chính `https://ec-holdings.vercel.app`.
+
+> **Version:** EC-HOLDINGS **1.1.1** — ĐÃ PUSH + ĐÃ LIVE.
